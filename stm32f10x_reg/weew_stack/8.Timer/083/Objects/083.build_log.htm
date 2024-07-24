@@ -1,0 +1,709 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: nguyen trong_thuy, non, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DARMSTM.DLL V1.69.1.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\2.Embedded\microtroller\STM32fx\stm32f10x_reg\weew_stack\8.Timer\083\083.uvprojx
+Project File Date:  07/22/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+main.c(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(6): warning: unused variable 'b' [-Wunused-variable]
+    6 |         int volatile b = a/0;
+      |                      ^
+main.c(6): warning: division by zero is undefined [-Wdivision-by-zero]
+    6 |         int volatile b = a/0;
+      |                           ^~
+main.c(16): warning: unused variable 'a' [-Wunused-variable]
+   16 |         int a;
+      |             ^
+main.c(14): warning: no previous prototype for function 'UsageFault_Handler' [-Wmissing-prototypes]
+   14 | void UsageFault_Handler(void)
+      |      ^
+main.c(14): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   14 | void UsageFault_Handler(void)
+      | ^
+      | static 
+7 warnings generated.
+compiling main.c...
+ArmClang: warning: argument unused during compilation: '-D __EVAL' [-Wunused-command-line-argument]
+ArmClang: warning: argument unused during compilation: '-D __UVISION_VERSION=539' [-Wunused-command-line-argument]
+ArmClang: warning: argument unused during compilation: '-D _RTE_' [-Wunused-command-line-argument]
+ArmClang: warning: argument unused during compilation: '-D STM32F10X_MD' [-Wunused-command-line-argument]
+ArmClang: warning: argument unused during compilation: '-D _RTE_' [-Wunused-command-line-argument]
+assembling rtos.asm...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(37): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.h(31): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(37): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.h(146): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  146 |   DMA_Channel->CCR &= ~DMA_CHANNEL_EN;
+      |                    ~~ ^~~~~~~~~~~~~~~
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(233): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  233 |         RCC->AHBENR &= ~RCC_AHBENR_DMA1EN;
+      |                     ~~ ^~~~~~~~~~~~~~~~~~
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(301): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  301 | __WEAK void DMA1_Channel1_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(301): warning: unused parameter 'event' [-Wunused-parameter]
+  301 | __WEAK void DMA1_Channel1_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(301): warning: no previous prototype for function 'DMA1_Channel1_Event' [-Wmissing-prototypes]
+  301 | __WEAK void DMA1_Channel1_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(301): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  301 | __WEAK void DMA1_Channel1_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(302): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  302 | __WEAK void DMA1_Channel2_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(302): warning: unused parameter 'event' [-Wunused-parameter]
+  302 | __WEAK void DMA1_Channel2_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(302): warning: no previous prototype for function 'DMA1_Channel2_Event' [-Wmissing-prototypes]
+  302 | __WEAK void DMA1_Channel2_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(302): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  302 | __WEAK void DMA1_Channel2_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(303): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  303 | __WEAK void DMA1_Channel3_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(303): warning: unused parameter 'event' [-Wunused-parameter]
+  303 | __WEAK void DMA1_Channel3_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(303): warning: no previous prototype for function 'DMA1_Channel3_Event' [-Wmissing-prototypes]
+  303 | __WEAK void DMA1_Channel3_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(303): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  303 | __WEAK void DMA1_Channel3_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(304): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  304 | __WEAK void DMA1_Channel4_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(304): warning: unused parameter 'event' [-Wunused-parameter]
+  304 | __WEAK void DMA1_Channel4_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(304): warning: no previous prototype for function 'DMA1_Channel4_Event' [-Wmissing-prototypes]
+  304 | __WEAK void DMA1_Channel4_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(304): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  304 | __WEAK void DMA1_Channel4_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(305): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  305 | __WEAK void DMA1_Channel5_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(305): warning: unused parameter 'event' [-Wunused-parameter]
+  305 | __WEAK void DMA1_Channel5_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(305): warning: no previous prototype for function 'DMA1_Channel5_Event' [-Wmissing-prototypes]
+  305 | __WEAK void DMA1_Channel5_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(305): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  305 | __WEAK void DMA1_Channel5_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(306): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  306 | __WEAK void DMA1_Channel6_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(306): warning: unused parameter 'event' [-Wunused-parameter]
+  306 | __WEAK void DMA1_Channel6_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(306): warning: no previous prototype for function 'DMA1_Channel6_Event' [-Wmissing-prototypes]
+  306 | __WEAK void DMA1_Channel6_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(306): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  306 | __WEAK void DMA1_Channel6_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(307): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+  307 | __WEAK void DMA1_Channel7_Event (uint32_t event) {;}
+      |                                                   ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(307): warning: unused parameter 'event' [-Wunused-parameter]
+  307 | __WEAK void DMA1_Channel7_Event (uint32_t event) {;}
+      |                                           ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(307): warning: no previous prototype for function 'DMA1_Channel7_Event' [-Wmissing-prototypes]
+  307 | __WEAK void DMA1_Channel7_Event (uint32_t event) {;}
+      |             ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(307): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  307 | __WEAK void DMA1_Channel7_Event (uint32_t event) {;}
+      |        ^
+      |        static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(323): warning: no previous prototype for function 'DMA1_Channel1_IRQHandler' [-Wmissing-prototypes]
+  323 | void DMA1_Channel1_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(323): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  323 | void DMA1_Channel1_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(335): warning: no previous prototype for function 'DMA1_Channel2_IRQHandler' [-Wmissing-prototypes]
+  335 | void DMA1_Channel2_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(335): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  335 | void DMA1_Channel2_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(347): warning: no previous prototype for function 'DMA1_Channel3_IRQHandler' [-Wmissing-prototypes]
+  347 | void DMA1_Channel3_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(347): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  347 | void DMA1_Channel3_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(359): warning: no previous prototype for function 'DMA1_Channel4_IRQHandler' [-Wmissing-prototypes]
+  359 | void DMA1_Channel4_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(359): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  359 | void DMA1_Channel4_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(371): warning: no previous prototype for function 'DMA1_Channel5_IRQHandler' [-Wmissing-prototypes]
+  371 | void DMA1_Channel5_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(371): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  371 | void DMA1_Channel5_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(383): warning: no previous prototype for function 'DMA1_Channel6_IRQHandler' [-Wmissing-prototypes]
+  383 | void DMA1_Channel6_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(383): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  383 | void DMA1_Channel6_IRQHandler (void) {
+      | ^
+      | static 
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(395): warning: no previous prototype for function 'DMA1_Channel7_IRQHandler' [-Wmissing-prototypes]
+  395 | void DMA1_Channel7_IRQHandler (void) {
+      |      ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver/DMA_STM32F10x.c(395): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  395 | void DMA1_Channel7_IRQHandler (void) {
+      | ^
+      | static 
+33 warnings generated.
+compiling DMA_STM32F10x.c...
+../../../Driver/i2c_drive.c(1): warning: In file included from...
+../../../Driver/include\i2c_drive.h(3): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/i2c_drive.c(41): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   41 |         float T_PCLK = 1000/(i2c->CR2 & 0xff);
+      |               ^
+../../../Driver/i2c_drive.c(68): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   68 |         __IO uint32_t tmp;
+      |                       ^
+../../../Driver/i2c_drive.c(84): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   84 |         __IO uint32_t tmp = i2c->SR1;
+      |                       ^
+../../../Driver/i2c_drive.c(158): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+  158 |         __IO uint16_t tmp;
+      |                       ^
+../../../Driver/i2c_drive.c(176): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  176 |         uint16_t i = 0;
+      |                  ^
+../../../Driver/i2c_drive.c(187): warning: unused parameter 'i2c' [-Wunused-parameter]
+  187 | uint8_t I2C_Read(I2C_TypeDef *i2c)
+      |                               ^
+../../../Driver/i2c_drive.c(187): warning: no previous prototype for function 'I2C_Read' [-Wmissing-prototypes]
+  187 | uint8_t I2C_Read(I2C_TypeDef *i2c)
+      |         ^
+../../../Driver/i2c_drive.c(187): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  187 | uint8_t I2C_Read(I2C_TypeDef *i2c)
+      | ^
+      | static 
+../../../Driver/i2c_drive.c(190): warning: non-void function does not return a value [-Wreturn-type]
+  190 | }
+      | ^
+../../../Driver/i2c_drive.c(192): warning: unused parameter 'i2c' [-Wunused-parameter]
+  192 | static void I2C_Stop_Recive(I2C_TypeDef *i2c)
+      |                                          ^
+../../../Driver/i2c_drive.c(197): warning: unused parameter 'i2c' [-Wunused-parameter]
+  197 | uint8_t I2C_Master_Receive(I2C_TypeDef *i2c, Slave_xbit_Address Xbit, uint16_t Slave_Address)
+      |                                         ^
+../../../Driver/i2c_drive.c(197): warning: unused parameter 'Xbit' [-Wunused-parameter]
+  197 | uint8_t I2C_Master_Receive(I2C_TypeDef *i2c, Slave_xbit_Address Xbit, uint16_t Slave_Address)
+      |                                                                 ^
+../../../Driver/i2c_drive.c(197): warning: unused parameter 'Slave_Address' [-Wunused-parameter]
+  197 | uint8_t I2C_Master_Receive(I2C_TypeDef *i2c, Slave_xbit_Address Xbit, uint16_t Slave_Address)
+      |                                                                                ^
+../../../Driver/i2c_drive.c(200): warning: non-void function does not return a value [-Wreturn-type]
+  200 | }
+      | ^
+../../../Driver/i2c_drive.c(192): warning: unused function 'I2C_Stop_Recive' [-Wunused-function]
+  192 | static void I2C_Stop_Recive(I2C_TypeDef *i2c)
+      |             ^~~~~~~~~~~~~~~
+../../../Driver/i2c_drive.c(177): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  177 |         while(*(Data+i) != '\0')
+      |                 ^~~~
+../../../Driver/i2c_drive.c(179): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  179 |                 I2C_Write(i2c,*(Data+i));
+      |                                 ^~~~
+19 warnings generated.
+compiling i2c_drive.c...
+../../../Driver/timer_drive.c(1): warning: In file included from...
+../../../Driver/include\timer_drive.h(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/timer_drive.c(1): warning: In file included from...
+../../../Driver/include\timer_drive.h(29): warning: no newline at end of file [-Wnewline-eof]
+   29 | void timer_irq_stop(char timer);
+      |                                 ^
+../../../Driver/timer_drive.c(3): warning: no previous prototype for function 'get_timer' [-Wmissing-prototypes]
+    3 | TIM_TypeDef * get_timer(char timer){
+      |               ^
+../../../Driver/timer_drive.c(3): note: declare 'static' if the function is not intended to be used outside of this translation unit
+    3 | TIM_TypeDef * get_timer(char timer){
+      | ^
+      | static 
+../../../Driver/timer_drive.c(12): warning: variable 'tim' may be uninitialized when used here [-Wconditional-uninitialized]
+   12 |         return tim;
+      |                ^~~
+../../../Driver/timer_drive.c(4): note: initialize the variable 'tim' to silence this warning
+    4 |         TIM_TypeDef * tim;
+      |                          ^
+      |                           = 0
+../../../Driver/timer_drive.c(34): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   34 |         tim->PSC = prescaler;   
+      |                  ~ ^~~~~~~~~
+../../../Driver/timer_drive.c(37): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   37 |         tim->ARR = (microS-3);  
+      |                  ~  ~~~~~~^~
+../../../Driver/timer_drive.c(15): warning: no previous prototype for function 'timer_start_micros' [-Wmissing-prototypes]
+   15 | TIM_TypeDef * timer_start_micros(char timer, int microS){
+      |               ^
+../../../Driver/timer_drive.c(15): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   15 | TIM_TypeDef * timer_start_micros(char timer, int microS){
+      | ^
+      | static 
+../../../Driver/timer_drive.c(64): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   64 |         tim->PSC = prescaler;   
+      |                  ~ ^~~~~~~~~
+../../../Driver/timer_drive.c(67): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   67 |         tim->ARR = (millis*2);  
+      |                  ~  ~~~~~~^~
+../../../Driver/timer_drive.c(45): warning: no previous prototype for function 'timer_start_millis' [-Wmissing-prototypes]
+   45 | TIM_TypeDef * timer_start_millis(char timer, int millis){
+      |               ^
+../../../Driver/timer_drive.c(45): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   45 | TIM_TypeDef * timer_start_millis(char timer, int millis){
+      | ^
+      | static 
+../../../Driver/timer_drive.c(176): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  176 |                 RCC->APB2ENR &= ~0x0800;
+      |                              ~~ ^~~~~~~
+../../../Driver/timer_drive.c(183): warning: no newline at end of file [-Wnewline-eof]
+  183 | }
+      |  ^
+14 warnings generated.
+compiling timer_drive.c...
+../../../Driver/dma.c(1): warning: In file included from...
+../../../Driver/include\dma.h(4): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+3 warnings generated.
+compiling dma.c...
+../../../Driver/systick_time_drive.c(1): warning: In file included from...
+../../../Driver/include\systick_time_drive.h(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/systick_time_drive.c(1): warning: In file included from...
+../../../Driver/include\systick_time_drive.h(9): warning: no newline at end of file [-Wnewline-eof]
+    9 | void SysTick_IT_Init(void);
+      |                            ^
+4 warnings generated.
+compiling systick_time_drive.c...
+../../../Driver/flash.c(1): warning: In file included from...
+../../../Driver/include\flash.h(4): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/flash.c(48): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
+   48 |                 *(uint16_t*)(AddrStart + i*2U) = *(uint16_t*)(Buff + i*2U);
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/flash.c(45): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   45 |         uint32_t i;
+      |                  ^
+../../../Driver/flash.c(22): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   22 |                 *(uint8_t*)(Buff + i) = *(uint8_t*)(AddrStart + i); 
+      |                             ^~~~
+../../../Driver/flash.c(48): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   48 |                 *(uint16_t*)(AddrStart + i*2U) = *(uint16_t*)(Buff + i*2U);
+      |                                                               ^~~~
+7 warnings generated.
+compiling flash.c...
+assembling startup_stm32f10x_md.s...
+../../../Driver/uart_drive.c(1): warning: In file included from...
+../../../Driver/include\uart_drive.h(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/uart_drive.c(26): warning: implicit conversion turns floating-point number into integer: 'double' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+   26 |     dec = frac;
+      |         ~ ^~~~
+../../../Driver/uart_drive.c(16): warning: variable 'result' set but not used [-Wunused-but-set-variable]
+   16 |     uint32_t result;
+      |              ^
+../../../Driver/uart_drive.c(39): warning: non-void function does not return a value [-Wreturn-type]
+   39 | }
+      | ^
+../../../Driver/uart_drive.c(66): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   66 |         USART1->BRR = BRR;
+      |                     ~ ^~~
+../../../Driver/uart_drive.c(84): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   84 |         USART2->BRR = BRR;
+      |                     ~ ^~~
+../../../Driver/uart_drive.c(102): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  102 |         USART3->BRR = BRR;
+      |                     ~ ^~~
+../../../Driver/uart_drive.c(53): warning: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'uint32_t' (aka 'unsigned int') [-Wshorten-64-to-32]
+   53 |     BRR = set_BR(uart,BR);
+      |           ~~~~~~      ^~
+../../../Driver/uart_drive.c(123): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  123 |         while((USART1->SR & (1<<6)) == 0x80);
+      |               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+../../../Driver/uart_drive.c(127): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  127 |         while((USART2->SR & (1<<6)) == 0x80);
+      |               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+../../../Driver/uart_drive.c(131): warning: result of comparison of 7-bit unsigned value == 128 is always false [-Wtautological-value-range-compare]
+  131 |         while((USART3->SR & (1<<6)) == 0x80);
+      |               ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~
+../../../Driver/uart_drive.c(159): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  159 |         c = USART1->DR;
+      |           ~ ~~~~~~~~^~
+../../../Driver/uart_drive.c(163): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  163 |         c = USART2->DR;
+      |           ~ ~~~~~~~~^~
+../../../Driver/uart_drive.c(167): warning: implicit conversion loses integer precision: 'volatile uint16_t' (aka 'volatile unsigned short') to 'char' [-Wimplicit-int-conversion]
+  167 |         c = USART3->DR;
+      |           ~ ~~~~~~~~^~
+../../../Driver/uart_drive.c(169): warning: variable 'c' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
+  169 |     default:
+      |     ^~~~~~~
+../../../Driver/uart_drive.c(172): note: uninitialized use occurs here
+  172 |     return c;
+      |            ^
+../../../Driver/uart_drive.c(154): note: initialize the variable 'c' to silence this warning
+  154 |     char c;
+      |           ^
+      |            = '\0'
+../../../Driver/uart_drive.c(191): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  191 | __WEAK void USART2_IRQHandler() 
+      |                              ^
+      |                               void
+../../../Driver/uart_drive.c(191): warning: no previous prototype for function 'USART2_IRQHandler' [-Wmissing-prototypes]
+  191 | __WEAK void USART2_IRQHandler() 
+      |             ^
+../../../Driver/uart_drive.c(191): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  191 | __WEAK void USART2_IRQHandler() 
+      |        ^
+      |        static 
+../../../Driver/uart_drive.c(196): warning: no previous prototype for function 'UART_transmit' [-Wmissing-prototypes]
+  196 | void UART_transmit(void)
+      |      ^
+../../../Driver/uart_drive.c(196): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  196 | void UART_transmit(void)
+      | ^
+      | static 
+../../../Driver/uart_drive.c(213): warning: no previous prototype for function 'UART_RECIEVE' [-Wmissing-prototypes]
+  213 | void UART_RECIEVE(void)
+      |      ^
+../../../Driver/uart_drive.c(213): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  213 | void UART_RECIEVE(void)
+      | ^
+      | static 
+../../../Driver/uart_drive.c(1): warning: In file included from...
+../../../Driver/include\uart_drive.h(11): warning: no previous extern declaration for non-static variable 'UART_Channel' [-Wmissing-variable-declarations]
+   11 | }UART_Channel;
+      |  ^
+../../../Driver/include\uart_drive.h(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    7 | enum{
+      | ^
+../../../Driver/uart_drive.c(143): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  143 |     while(*(msg + i) != '\0') 
+      |             ^~~
+../../../Driver/uart_drive.c(145): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  145 |         UART_Tx(uart, *(msg +i));
+      |                         ^~~
+../../../Driver/uart_drive.c(178): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  178 |     msg[*counter] = UART_Rx(uart);
+      |     ^~~
+../../../Driver/uart_drive.c(179): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  179 |     if(msg[*counter] == endl)
+      |        ^~~
+26 warnings generated.
+compiling uart_drive.c...
+../../../Driver/gpio_drive.c(1): warning: In file included from...
+../../../Driver/include\gpio_drive.h(3): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../../../Driver/gpio_drive.c(20): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   20 |                         CR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(25): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   25 |                 CR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(30): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   30 |                 CR = (__IO uint64_t *)(&GPIO_C + offset);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(33): warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+   33 |         *CR &= ~(0xf<<(tPin)*4);
+      |             ~~ ^~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(34): warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+   34 |         *CR |= ((DIR<<(tPin*4)) | (OPT<<(tPin*4+2)));
+      |             ~~  ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(27): warning: variable 'CR' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+   27 |         else if(PORT == 3)
+      |                 ^~~~~~~~~
+../../../Driver/gpio_drive.c(33): note: uninitialized use occurs here
+   33 |         *CR &= ~(0xf<<(tPin)*4);
+      |          ^~
+../../../Driver/gpio_drive.c(27): note: remove the 'if' if its condition is always true
+   27 |         else if(PORT == 3)
+      |              ^~~~~~~~~~~~~
+   28 |                 {
+../../../Driver/gpio_drive.c(5): note: initialize the variable 'CR' to silence this warning
+    5 |         __IO uint64_t * CR;
+      |                           ^
+      |                            = 0
+../../../Driver/gpio_drive.c(45): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   45 |                         IDR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(49): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   49 |                 IDR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(53): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   53 |                 IDR = (__IO uint64_t *)(&GPIO_C+ offset);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(55): warning: implicit conversion changes signedness: 'uint64_t' (aka 'unsigned long long') to 'int' [-Wsign-conversion]
+   55 |                 state =  ((*IDR & (1<<pin))>>pin)  ;
+      |                       ~   ~~~~~~~~~~~~~~~~~^~~~~
+../../../Driver/gpio_drive.c(51): warning: variable 'IDR' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+   51 |         else if(PORT == 3)
+      |                 ^~~~~~~~~
+../../../Driver/gpio_drive.c(55): note: uninitialized use occurs here
+   55 |                 state =  ((*IDR & (1<<pin))>>pin)  ;
+      |                             ^~~
+../../../Driver/gpio_drive.c(51): note: remove the 'if' if its condition is always true
+   51 |         else if(PORT == 3)
+      |              ^~~~~~~~~~~~~
+   52 |                 {
+../../../Driver/gpio_drive.c(39): note: initialize the variable 'IDR' to silence this warning
+   39 |         __IO uint64_t * IDR;
+      |                            ^
+      |                             = 0
+../../../Driver/gpio_drive.c(66): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   66 |                         ODR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(70): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   70 |                 ODR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(74): warning: cast from 'volatile unsigned long *' to 'volatile uint64_t *' (aka 'volatile unsigned long long *') increases required alignment from 4 to 8 [-Wcast-align]
+   74 |                 ODR = (__IO uint64_t *)(&GPIO_C+ offset);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../Driver/gpio_drive.c(76): warning: implicit conversion changes signedness: 'int' to 'uint64_t' (aka 'unsigned long long') [-Wsign-conversion]
+   76 |         STATUS ? (*ODR |= (STATUS<<pin)) : (*ODR &= ~(1<<pin));
+      |                        ~~  ~~~~~~^~~~~
+../../../Driver/gpio_drive.c(76): warning: variable 'ODR' may be uninitialized when used here [-Wconditional-uninitialized]
+   76 |         STATUS ? (*ODR |= (STATUS<<pin)) : (*ODR &= ~(1<<pin));
+      |                    ^~~
+../../../Driver/gpio_drive.c(62): note: initialize the variable 'ODR' to silence this warning
+   62 |         __IO uint64_t * ODR;
+      |                            ^
+      |                             = 0
+../../../Driver/gpio_drive.c(91): warning: no previous prototype for function 'Blink_Led' [-Wmissing-prototypes]
+   91 | void Blink_Led(void)
+      |      ^
+../../../Driver/gpio_drive.c(91): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   91 | void Blink_Led(void)
+      | ^
+      | static 
+../../../Driver/gpio_drive.c(127): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  127 |         uint8_t EXTIx_IRQn; 
+      |                 ^
+../../../Driver/gpio_drive.c(20): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   20 |                         CR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                                                ^~~~~~~
+../../../Driver/gpio_drive.c(25): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   25 |                 CR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                                        ^~~~~~~
+../../../Driver/gpio_drive.c(30): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   30 |                 CR = (__IO uint64_t *)(&GPIO_C + offset);
+      |                                        ^~~~~~~
+../../../Driver/gpio_drive.c(45): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   45 |                         IDR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                                                 ^~~~~~~
+../../../Driver/gpio_drive.c(49): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   49 |                 IDR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                                         ^~~~~~~
+../../../Driver/gpio_drive.c(53): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   53 |                 IDR = (__IO uint64_t *)(&GPIO_C+ offset);
+      |                                         ^~~~~~~
+../../../Driver/gpio_drive.c(66): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   66 |                         ODR = (__IO uint64_t *)(&GPIO_A + offset);
+      |                                                 ^~~~~~~
+../../../Driver/gpio_drive.c(70): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   70 |                 ODR = (__IO uint64_t *)(&GPIO_B+ offset);
+      |                                         ^~~~~~~
+../../../Driver/gpio_drive.c(74): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   74 |                 ODR = (__IO uint64_t *)(&GPIO_C+ offset);
+      |                                         ^~~~~~~
+../../../Driver/gpio_drive.c(134): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  134 |         AFIO->EXTICR[(uint8_t)Pin/4] = EXTI_Px_PIN;  
+      |         ^~~~~~~~~~~~
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+ 1414 | #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+      |                             ^
+31 warnings generated.
+compiling gpio_drive.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+linking...
+.\Objects\083.axf: Warning: L6439W: Multiply defined Global Symbol USART2_IRQHandler defined in .text(startup_stm32f10x_md.o) rejected in favor of Symbol defined in .text.USART2_IRQHandler(uart_drive.o).
+Program Size: Code=1128 RO-data=252 RW-data=0 ZI-data=1632  
+Finished: 0 information, 1 warning and 0 error messages.
+".\Objects\083.axf" - 0 Error(s), 155 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: DMA Version: 1.3
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+  C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/RTE_Driver
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:DMA@1.3
+      Source file:   RTE_Driver/DMA_STM32F10x.c
+      Include file:  RTE_Driver/DMA_STM32F10x.h
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

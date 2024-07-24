@@ -1,0 +1,23 @@
+weew stack : stm32f103c8
+https://www.youtube.com/playlist?list=PLtVUYRe-Z-mcjXXFBte61L8SjyI377VNq
+
+hshop
+stm32f1		 60k
+st-link 	 45k
+esp01/8266	 48k
+logic analyzer	155k
+
+linh kiện chất lượng
+dây		 10k
+ft232 		 40k
+
+	
+tổng 		230k	
+n
+
+nước 6 168
+dien nc 500
+bot giat 60
+
+
+

@@ -1,0 +1,368 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: nguyen trong_thuy, non, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\2.Embedded\microtroller\3.stm32fx\reg\stm32f10x\6.i2c\061__STM32F1_I2C_communication with oled\061__STM32F1_I2C_communication with oled.uvprojx
+Project File Date:  04/09/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+string.c(1): warning: In file included from...
+./string.h(6): warning: no newline at end of file [-Wnewline-eof]
+    6 | int char_cvt_int(char str[]);
+      |                              ^
+string.c(22): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   22 |         int i;
+      |             ^
+string.c(51): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   51 |                 str_tmp[cnt] = nums % div + 0x30;
+      |                              ~ ~~~~~~~~~~~^~~~~~
+string.c(55): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   55 |         str_tmp[cnt] = nums + 0x30;
+      |                      ~ ~~~~~^~~~~~
+string.c(5): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+    5 |         while(*(str + i) != '\0'){
+      |                 ^~~
+string.c(6): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+    6 |                 *(str + i) = '\0';
+      |                   ^~~
+string.c(13): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   13 |         while(str[i] != '\0'){
+      |               ^~~
+string.c(26): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   26 |                         if(str_dest[i+j] == str_src[j]){
+      |                            ^~~~~~~~
+string.c(26): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   26 |                         if(str_dest[i+j] == str_src[j]){
+      |                                             ^~~~~~~
+string.c(51): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   51 |                 str_tmp[cnt] = nums % div + 0x30;
+      |                 ^~~~~~~
+string.c(55): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   55 |         str_tmp[cnt] = nums + 0x30;
+      |         ^~~~~~~
+string.c(57): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   57 |                 str_dest[cnt - j] = str_tmp[j];
+      |                 ^~~~~~~~
+string.c(57): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   57 |                 str_dest[cnt - j] = str_tmp[j];
+      |                                     ^~~~~~~
+string.c(68): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   68 |                 check[0] = str[i];
+      |                            ^~~
+string.c(76): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   76 |                         result = result*10+ (str[i] - 0x30);
+      |                                              ^~~
+15 warnings generated.
+compiling string.c...
+assembling startup_stm32f10x_md.s...
+main.c(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(11): warning: 'return' will never be executed [-Wunreachable-code-return]
+   11 |         return 0;
+      |                ^
+4 warnings generated.
+compiling main.c...
+oled_i2c_drive.c(1): warning: In file included from...
+./oled_i2c_drive.h(1): warning: In file included from...
+./i2c_drive.h(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+oled_i2c_drive.c(7): error: call to undeclared function 'i2c_start'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    7 |         i2c_start(i2c);
+      |         ^
+oled_i2c_drive.c(8): error: call to undeclared function 'i2c_add'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    8 |         i2c_add(i2c,0x78, 0);// 0x78 is the primary  address
+      |         ^
+oled_i2c_drive.c(9): error: call to undeclared function 'i2c_data'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+    9 |         i2c_data(i2c,0x00);
+      |         ^
+oled_i2c_drive.c(11): error: call to undeclared function 'i2c_stop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   11 |         i2c_stop(i2c);
+      |         ^
+oled_i2c_drive.c(17): error: call to undeclared function 'i2c_start'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   17 |         i2c_start(i2c);
+      |         ^
+oled_i2c_drive.c(18): error: call to undeclared function 'i2c_add'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   18 |         i2c_add(i2c,0x78, 0);// 0x78 is the primary  address
+      |         ^
+oled_i2c_drive.c(19): error: call to undeclared function 'i2c_data'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   19 |         i2c_data(i2c,0x00);
+      |         ^
+oled_i2c_drive.c(21): error: call to undeclared function 'i2c_stop'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   21 |         i2c_stop(i2c);
+      |         ^
+oled_i2c_drive.c(28): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   28 |         oled_cmd_2byte(i2c,cmd);
+      |                            ^~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(30): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   30 |         oled_cmd_2byte(i2c,cmd1);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(39): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   39 |         oled_cmd_2byte(i2c,cmd1);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(42): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   42 |         oled_cmd_2byte(i2c,cmd3);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(48): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   48 |         oled_cmd_2byte(i2c,cmd4);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(51): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   51 |         oled_cmd_2byte(i2c,cmd5);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(56): warning: incompatible pointer types passing 'char[2]' to parameter of type 'int *' [-Wincompatible-pointer-types]
+   56 |         oled_cmd_2byte(i2c,cmd6);
+      |                            ^~~~
+oled_i2c_drive.c(15): note: passing argument to parameter 'data' here
+   15 | void oled_cmd_2byte(char i2c, int data[]){
+      |                                   ^
+oled_i2c_drive.c(27): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   27 |         char cmd[] = {0x48,0x3F};
+      |              ^
+oled_i2c_drive.c(38): warning: unused variable 'cmd2' [-Wunused-variable]
+   38 |         char cmd2[] = {0xDA,0x02};
+      |              ^~~~
+oled_i2c_drive.c(25): warning: no previous prototype for function 'oled_init' [-Wmissing-prototypes]
+   25 | void oled_init(char i2c){
+      |      ^
+oled_i2c_drive.c(25): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   25 | void oled_init(char i2c){
+      | ^
+      | static 
+oled_i2c_drive.c(59): warning: unused parameter 'i2c' [-Wunused-parameter]
+   59 | void oled_data(char i2c, char data){
+      |                     ^
+oled_i2c_drive.c(59): warning: unused parameter 'data' [-Wunused-parameter]
+   59 | void oled_data(char i2c, char data){
+      |                               ^
+oled_i2c_drive.c(59): warning: no previous prototype for function 'oled_data' [-Wmissing-prototypes]
+   59 | void oled_data(char i2c, char data){
+      |      ^
+oled_i2c_drive.c(59): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   59 | void oled_data(char i2c, char data){
+      | ^
+      | static 
+oled_i2c_drive.c(63): warning: no previous prototype for function 'oled_pos' [-Wmissing-prototypes]
+   63 | void oled_pos(char i2c, char Xpos, char Ypos){
+      |      ^
+oled_i2c_drive.c(63): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   63 | void oled_pos(char i2c, char Xpos, char Ypos){
+      | ^
+      | static 
+oled_i2c_drive.c(71): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   71 |         int i, j;
+      |             ^
+oled_i2c_drive.c(69): warning: no previous prototype for function 'oled_blank' [-Wmissing-prototypes]
+   69 | void oled_blank(char i2c){
+      |      ^
+oled_i2c_drive.c(69): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   69 | void oled_blank(char i2c){
+      | ^
+      | static 
+19 warnings and 8 errors generated.
+compiling oled_i2c_drive.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+i2c_drive.c(1): warning: In file included from...
+./i2c_drive.h(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+i2c_drive.c(32): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   32 |                 I2C1->CCR = speed_mode;
+      |                           ~ ^~~~~~~~~~
+i2c_drive.c(47): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   47 |                 I2C2->CCR = speed_mode;
+      |                           ~ ^~~~~~~~~~
+i2c_drive.c(54): warning: no previous prototype for function 'i2c_start' [-Wmissing-prototypes]
+   54 | void i2c_start(char i2c){
+      |      ^
+i2c_drive.c(54): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   54 | void i2c_start(char i2c){
+      | ^
+      | static 
+i2c_drive.c(79): warning: declaration shadows a local variable [-Wshadow]
+   79 |                 volatile int tmp;
+      |                              ^
+i2c_drive.c(66): note: previous declaration is here
+   66 |         volatile int tmp;
+      |                      ^
+i2c_drive.c(79): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   79 |                 volatile int tmp;
+      |                              ^
+i2c_drive.c(66): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   66 |         volatile int tmp;
+      |                      ^
+i2c_drive.c(65): warning: no previous prototype for function 'i2c_add' [-Wmissing-prototypes]
+   65 | void i2c_add(char i2c, char address, char RW){
+      |      ^
+i2c_drive.c(65): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   65 | void i2c_add(char i2c, char address, char RW){
+      | ^
+      | static 
+i2c_drive.c(94): warning: no previous prototype for function 'i2c_data' [-Wmissing-prototypes]
+   94 | void i2c_data(char i2c, char data){
+      |      ^
+i2c_drive.c(94): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   94 | void i2c_data(char i2c, char data){
+      | ^
+      | static 
+i2c_drive.c(108): warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+  108 |         volatile int tmp;
+      |                      ^
+i2c_drive.c(107): warning: no previous prototype for function 'i2c_stop' [-Wmissing-prototypes]
+  107 | void i2c_stop(char i2c){
+      |      ^
+i2c_drive.c(107): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  107 | void i2c_stop(char i2c){
+      | ^
+      | static 
+i2c_drive.c(125): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  125 |         while(data[i]){
+      |               ^~~~
+i2c_drive.c(126): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  126 |                 i2c_data(i2c,data[i]);
+      |                              ^~~~
+15 warnings generated.
+compiling i2c_drive.c...
+gpio_drive.c(10): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+gpio_drive.c(95): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   95 |                 EXTI->IMR(Interrupt mask register): Kiem soat viec cho ph<E9>p hoac ngan chan tung duong ngat ngoai tao ra mot yeu cau ngat cho CPU
+      |                                                                          ^
+gpio_drive.c(132): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  132 |         //NVIC_EnableIRQ(EXTI0_IRQn); // K<ED>ch hoat ngat EXTI0 trong bo dieu khien ngat (NVIC)
+      |                                           ^
+gpio_drive.c(114): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  114 |         unsigned int x = (((Port == 2))?1:0) + ((Port == 3)? 2:0);
+      |                      ^
+gpio_drive.c(116): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  116 |         AFIO->EXTICR[Pin] = x;
+      |         ^~~~~~~~~~~~
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+ 1414 | #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+      |                             ^
+7 warnings generated.
+compiling gpio_drive.c...
+".\Objects\061__STM32F1_I2C_communication with oled.axf" - 8 Error(s), 65 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/system_stm32f10x.c
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

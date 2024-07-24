@@ -1,0 +1,223 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: nguyen trong_thuy, non, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.9.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\2.Embedded\microtroller\3.stm32fx\reg\stm32f10x\4.SPI\040__STM32F1_SPI_Communication_Introduction_&_SETUP\040__STM32F1_SPI_Communication_Introduction_&_SETUP.uvprojx
+Project File Date:  02/28/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+gpio_drive.c(10): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+gpio_drive.c(95): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   95 |                 EXTI->IMR(Interrupt mask register): Kiem soat viec cho ph<E9>p hoac ngan chan tung duong ngat ngoai tao ra mot yeu cau ngat cho CPU
+      |                                                                          ^
+gpio_drive.c(132): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  132 |         //NVIC_EnableIRQ(EXTI0_IRQn); // K<ED>ch hoat ngat EXTI0 trong bo dieu khien ngat (NVIC)
+      |                                           ^
+gpio_drive.c(114): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  114 |         unsigned int x = (((Port == 2))?1:0) + ((Port == 3)? 2:0);
+      |                      ^
+gpio_drive.c(116): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  116 |         AFIO->EXTICR[Pin] = x;
+      |         ^~~~~~~~~~~~
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+ 1414 | #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+      |                             ^
+7 warnings generated.
+compiling gpio_drive.c...
+string.c(1): warning: In file included from...
+./string.h(6): warning: no newline at end of file [-Wnewline-eof]
+    6 | int char_cvt_int(char str[]);
+      |                              ^
+string.c(22): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   22 |         int i;
+      |             ^
+string.c(51): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   51 |                 str_tmp[cnt] = nums % div + 0x30;
+      |                              ~ ~~~~~~~~~~~^~~~~~
+string.c(55): warning: implicit conversion loses integer precision: 'int' to 'char' [-Wimplicit-int-conversion]
+   55 |         str_tmp[cnt] = nums + 0x30;
+      |                      ~ ~~~~~^~~~~~
+string.c(5): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+    5 |         while(*(str + i) != '\0'){
+      |                 ^~~
+string.c(6): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+    6 |                 *(str + i) = '\0';
+      |                   ^~~
+string.c(13): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   13 |         while(str[i] != '\0'){
+      |               ^~~
+string.c(26): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   26 |                         if(str_dest[i+j] == str_src[j]){
+      |                            ^~~~~~~~
+string.c(26): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   26 |                         if(str_dest[i+j] == str_src[j]){
+      |                                             ^~~~~~~
+string.c(51): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   51 |                 str_tmp[cnt] = nums % div + 0x30;
+      |                 ^~~~~~~
+string.c(55): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   55 |         str_tmp[cnt] = nums + 0x30;
+      |         ^~~~~~~
+string.c(57): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   57 |                 str_dest[cnt - j] = str_tmp[j];
+      |                 ^~~~~~~~
+string.c(57): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   57 |                 str_dest[cnt - j] = str_tmp[j];
+      |                                     ^~~~~~~
+string.c(68): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   68 |                 check[0] = str[i];
+      |                            ^~~
+string.c(76): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   76 |                         result = result*10+ (str[i] - 0x30);
+      |                                              ^~~
+15 warnings generated.
+compiling string.c...
+systick_drive.c(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+3 warnings generated.
+compiling systick_drive.c...
+main.c(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+3 warnings generated.
+compiling main.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+USART_drive.c(1): warning: In file included from...
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+USART_drive.c(65): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   65 |         unsigned short BRR_Cal = USART_BRR(Usart_Channel, Baundrate);
+      |                        ^
+USART_drive.c(150): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  150 |         unsigned short BRR_Cal = USART_BRR(Usart_Channel, Baundrate);
+      |                        ^
+USART_drive.c(139): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  139 |         while(*(msg+i) != '\0'){
+      |                 ^~~
+USART_drive.c(140): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  140 |                 USART_Tx(Usart_Channel,*(msg+i));
+      |                                          ^~~
+USART_drive.c(197): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  197 |                 msg[*counter] = USART_Rx(Usart_Channel);
+      |                 ^~~
+USART_drive.c(198): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  198 |                 if(msg[*counter] == '\n'){
+      |                    ^~~
+USART_drive.c(213): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  213 |         while(*(str+i)!= '\0'){
+      |                 ^~~
+USART_drive.c(214): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+  214 |                 *(str+i) = '\0';
+      |                   ^~~
+11 warnings generated.
+compiling USART_drive.c...
+linking...
+Program Size: Code=1872 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\040__STM32F1_SPI_Communication_Introduction_&_SETUP.axf" - 0 Error(s), 44 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

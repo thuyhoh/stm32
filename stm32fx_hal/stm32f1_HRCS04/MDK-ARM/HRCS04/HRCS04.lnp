@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"hrcs04\startup_stm32f103xb.o"
+"hrcs04\main.o"
+"hrcs04\stm32f1xx_it.o"
+"hrcs04\stm32f1xx_hal_msp.o"
+"hrcs04\stm32f1xx_hal_gpio_ex.o"
+"hrcs04\stm32f1xx_hal_tim.o"
+"hrcs04\stm32f1xx_hal_tim_ex.o"
+"hrcs04\stm32f1xx_hal.o"
+"hrcs04\stm32f1xx_hal_rcc.o"
+"hrcs04\stm32f1xx_hal_rcc_ex.o"
+"hrcs04\stm32f1xx_hal_gpio.o"
+"hrcs04\stm32f1xx_hal_dma.o"
+"hrcs04\stm32f1xx_hal_cortex.o"
+"hrcs04\stm32f1xx_hal_pwr.o"
+"hrcs04\stm32f1xx_hal_flash.o"
+"hrcs04\stm32f1xx_hal_flash_ex.o"
+"hrcs04\stm32f1xx_hal_exti.o"
+"hrcs04\system_stm32f1xx.o"
+--strict --scatter "HRCS04\HRCS04.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "HRCS04.map" -o HRCS04\HRCS04.axf

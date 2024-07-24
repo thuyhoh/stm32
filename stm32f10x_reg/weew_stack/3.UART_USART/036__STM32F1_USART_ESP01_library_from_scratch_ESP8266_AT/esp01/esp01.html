@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esp01 client</title>
+</head>
+<body>
+    <p>click into the botton to toggle the LED</p>
+    <p>BLUE LED state <span id = "BLUE"></span></p>
+    <p>RED LED state  <span id = "RED"></span></p>
+    <button id = "1" onclick="ledtoggle(this.id)">BLUE LED</button>
+    <button id = "2" onclick="ledtoggle(this.id)">RED LED</button>
+
+    <script>
+        function ledtoggle(clicked_id){
+            var xhr = new XMLHttpRequest();
+            var url = clicked_id;
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.satus == 200){
+                    if(this.responseText == "10"){
+                        document.getElementById("BLUE").innerHTML = "OFF";
+                    }else if(this.responseText == "11"){
+                        document.getElementById("BLUE").innerHTML = "ON";
+                    }else if(this.responseText == "20"){
+                        document.getElementById("REd").innerHTML = "OFF";
+                    }else if(this.responseText == "21"){
+                        document.getElementById("RED").innerHTML = "ON";
+                    }
+                }
+            };
+            xhr.open("GET",url,true);
+            xhr.send();
+        }
+
+        document.addEventListener("domcontentloaded",ledtoggle, false)
+    </script>
+</body>
+</html>
