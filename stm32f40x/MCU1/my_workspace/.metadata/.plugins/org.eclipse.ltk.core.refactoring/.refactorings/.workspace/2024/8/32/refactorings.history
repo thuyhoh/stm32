@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;001_HSI_configure&apos; to &apos;001_HSI_HSE_configure&apos;" description="Rename resource &apos;001_HSI_configure&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/001_HSI_configure" name="001_HSI_HSE_configure" stamp="1723297965044" updateReferences="true"/>
+</session>
