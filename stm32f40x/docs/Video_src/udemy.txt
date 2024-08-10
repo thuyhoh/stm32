@@ -1,0 +1,8 @@
+web : https://www.udemy.com/
+acc : trongthuynl2004@gmail.com
+pas : nguyentrongthuy
+
+MCU1_link : https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/learn/lecture/17154420#content
+
+
+	
