@@ -80,7 +80,7 @@
 
 
 /*
- *
+ *	Define Register of Peripheral
  */
 typedef struct
 {
@@ -96,6 +96,26 @@ typedef struct
 	_vo uint32_t AFRH;
 }GPIO_RegDef_t;
 
+typedef struct
+{
+	_vo uint32_t IMR;
+	_vo uint32_t EMR;
+	_vo uint32_t RTSR;
+	_vo uint32_t FTSR;
+	_vo uint32_t SWIER;
+	_vo uint32_t PR;
+}EXTI_RegDef_t;
+
+typedef struct
+{
+	_vo uint32_t MEMRMP;
+	_vo uint32_t PMC;
+	_vo uint32_t EXTICR1;
+	_vo uint32_t EXTICR2;
+	_vo uint32_t EXTICR3;
+	_vo uint32_t EXTICR4;
+	_vo uint32_t CMPCR;
+}SYSCFG_RegDef_t;
 /*
  *
  */
@@ -139,22 +159,45 @@ typedef struct
 
 typedef struct
 {
-
-}I2C_RegDef_t;
-
-typedef struct
-{
-
+	_vo uint32_t CR1;
+	_vo uint32_t CR2;
+	_vo uint32_t SR;
+	_vo uint32_t DR;
+	_vo uint32_t CRCPR;
+	_vo uint32_t RXCRCR;
+	_vo uint32_t TXCCRCR;
+	_vo uint32_t I2SCFGR;
+	_vo uint32_t I2SPR;
 }SPI_RegDef_t;
 
 typedef struct
 {
+	_vo uint32_t CR1;
+	_vo uint32_t CR2;
+	_vo uint32_t OAR1;
+	_vo uint32_t OAR2;
+	_vo uint32_t DR;
+	_vo uint32_t SR1;
+	_vo uint32_t SR2;
+	_vo uint32_t CCR;
+	_vo uint32_t TRISE;
+	_vo uint32_t FLTR;
+}I2C_RegDef_t;
 
+typedef struct
+{
+	_vo uint32_t SR;
+	_vo uint32_t DR;
+	_vo uint32_t BRR;
+	_vo uint32_t CR1;
+	_vo uint32_t CR2;
+	_vo uint32_t CR3;
+	_vo uint32_t GTPR;
 }USART_RegDef_t;
 
 
 /*
- *
+ *	base ptr of peripheral
  */
 
 #define GPIOA_BASE				((GPIO_RegDef_t *)GPIOA_BASEADDR)
@@ -169,6 +212,24 @@ typedef struct
 
 #define RCC_BASE				((RCC_RegDef_t *)RCC_BASEADDR)
 
+//#define I2C1_BASE
+//#define I2C2_BASE
+//#define I2C3_BASE
+
+//#define SPI1_BASE
+//#define SPI2_BASE
+//#define SPI3_BASE
+//#define SPI4_BASE
+//#define SPI5_BASE
+//#define SPI6_BASE
+
+//#define USART1_BASE
+//#define USART2_BASE
+//#define USART3_BASE
+//#define UART4_BASE
+//#define UART5_BASE
+//#define USART6_BASE
+
 /* Enable Clock for GPIOx */
 #define GPIOA_PCLK_EN 			RCC_BASE->AHB1ENR |= (1 << 0)
 #define GPIOB_PCLK_EN 			RCC_BASE->AHB1ENR |= (1 << 1)
@@ -179,6 +240,27 @@ typedef struct
 #define GPIOG_PCLK_EN 			RCC_BASE->AHB1ENR |= (1 << 6)
 #define GPIOH_PCLK_EN 			RCC_BASE->AHB1ENR |= (1 << 7)
 #define GPIOI_PCLK_EN 			RCC_BASE->AHB1ENR |= (1 << 8)
+
+/* Enable Clock for I2Cx */
+//#define I2C1_PCLK_EN
+//#define I2C2_PCLK_EN
+//#define I2C3_PCLK_EN
+
+/* Enable Clock for SPIx */
+//#define SPI1_PCLK_EN
+//#define SPI2_PCLK_EN
+//#define SPI3_PCLK_EN
+//#define SPI4_PCLK_EN
+//#define SPI5_PCLK_EN
+//#define SPI6_PCLK_EN
+
+/* Enable Clock for USARTx */
+//#define USART1_PCLK_EN
+//#define USART2_PCLK_EN
+//#define USART3_PCLK_EN
+//#define UART4_PCLK_EN
+//#define UART5_PCLK_EN
+//#define USART6_PCLK_EN
 
 /* Disable Clock for GPIOx */
 #define GPIOA_PCLK_DIS 			RCC_BASE->AHB1ENR &= ~(1 << 0)
@@ -191,7 +273,26 @@ typedef struct
 #define GPIOH_PCLK_DIS 			RCC_BASE->AHB1ENR &= ~(1 << 7)
 #define GPIOI_PCLK_DIS 			RCC_BASE->AHB1ENR &= ~(1 << 8)
 
+/* Disable Clock for I2Cx */
+//#define I2C1_PCLK_DIS
+//#define I2C2_PCLK_DIS
+//#define I2C3_PCLK_DIS
 
+/* Disable Clock for SPIx */
+//#define SPI1_PCLK_DIS
+//#define SPI2_PCLK_DIS
+//#define SPI3_PCLK_DIS
+//#define SPI4_PCLK_DIS
+//#define SPI5_PCLK_DIS
+//#define SPI6_PCLK_DIS
+
+/* Disable Clock for USARTx */
+//#define USART1_PCLK_DIS
+//#define USART2_PCLK_DIS
+//#define USART3_PCLK_DIS
+//#define UART4_PCLK_DIS
+//#define UART5_PCLK_DIS
+//#define USART6_PCLK_DIS
 
 
 

@@ -2266,3 +2266,213 @@ java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+!SESSION 2024-08-23 18:49:48.069 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2024-08-23 18:49:55.022
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-08-23 18:50:08.403
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-08-23 18:50:08.409
+!MESSAGE Log4j2 initialized with config file E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\my_workspace\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:13.396
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:13.398
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:13.398
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:13.398
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-08-23 18:50:16.381
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.206
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.206
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.206
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.206
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.238
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.239
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.240
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.241
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.242
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.242
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.243
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.243
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.243
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:22.243
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.918
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.918
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.919
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.920
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.921
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.921
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.921
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.921
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.921
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property http.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property http.proxyPort is set to 8081 but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property https.proxyHost is set to localhost but should not be set.
+
+!ENTRY org.eclipse.core.net 1 0 2024-08-23 18:50:23.922
+!MESSAGE System property https.proxyPort is set to 8081 but should not be set.
