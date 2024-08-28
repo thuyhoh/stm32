@@ -1,0 +1,115 @@
+/*
+ * gpio_driver.c
+ *
+ *  Created on: Aug 23, 2024
+ *      Author: ASUS
+ */
+#include <stm32f407xx_gpio_driver.h>
+
+/*
+ * GPIO Peripheral Clock setup
+ */
+
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIO, uint8_t ENorDI)
+{
+	if(ENorDI == ENABLE)
+	{
+		switch(pGPIO)
+		{
+		case GPIOA_BASE:
+			GPIOA_PCLK_EN();
+			break;
+		case GPIOB_BASE:
+			GPIOB_PCLK_EN();
+			break;
+		case GPIOC_BASE:
+			GPIOC_PCLK_EN();
+			break;
+		case GPIOD_BASE:
+			GPIOD_PCLK_EN();
+			break;
+		case GPIOE_BASE:
+			GPIOE_PCLK_EN();
+			break;
+		case GPIOF_BASE:
+			GPIOF_PCLK_EN();
+			break;
+		case GPIOG_BASE:
+			GPIOG_PCLK_EN();
+			break;
+		case GPIOH_BASE:
+			GPIOH_PCLK_EN();
+			break;
+		case GPIOI_BASE:
+			GPIOI_PCLK_EN();
+			break;
+		}
+	}
+	else // DISABLE PERPHERAL CLOCK
+	{
+		switch(pGPIO)
+		{
+		case GPIOA_BASE:
+			GPIOA_PCLK_DIS();
+			break;
+		case GPIOB_BASE:
+			GPIOB_PCLK_DIS();
+			break;
+		case GPIOC_BASE:
+			GPIOC_PCLK_DIS();
+			break;
+		case GPIOD_BASE:
+			GPIOD_PCLK_DIS();
+			break;
+		case GPIOE_BASE:
+			GPIOE_PCLK_DIS();
+			break;
+		case GPIOF_BASE:
+			GPIOF_PCLK_DIS();
+			break;
+		case GPIOG_BASE:
+			GPIOG_PCLK_DIS();
+			break;
+		case GPIOH_BASE:
+			GPIOH_PCLK_DIS();
+			break;
+		case GPIOI_BASE:
+			GPIOI_PCLK_DIS();
+			break;
+		}
+	}
+}
+
+/*
+ * GPIO Init and DeInit
+ */
+/****************************************************************************
+ * @fn	  			- GPIO_Init
+
+ * @brief  			- this function Initialization for GPIO
+
+ * @param[pGPIO]  	- base address of the GPIO peripheral
+ * @param[ENorDI]  	- Enable or Disable
+ * @param[]  		-
+
+ * @return 			- none
+
+ * @note	  		- none
+ */
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle){}
+void GPIO_DeInit(GPIO_RegDef_t *pGPIO){}
+
+/*
+ * Data read and write
+ */
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber){}
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIO){}
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber, uint8_t State){}
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIO, uint8_t Value){}
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber){}
+/*
+ * IRQ Configuration and ISR handling
+ */
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi){}
+void GPIO_IRQHandler(uint8_t PinNumber){}
+

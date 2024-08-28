@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="&#x09;// 2. configure FA8 to AF0 mode to behave as MCO1 signal"/>
+		<item key="selection" value="pGPIOLed"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="pGPIOHandle"/>
+			<item value="-&gt;"/>
+			<item value="GPIO_OPTYPER"/>
+			<item value="@GPIO_MODE"/>
 			<item value="&#x09;// 2. configure FA8 to AF0 mode to behave as MCO1 signal"/>
 		</list>
+		<list key="replacehistory">
+			<item value="pGPIOLed"/>
+			<item value="."/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1301"/>
+		<item key="DIALOG_Y_ORIGIN" value="216"/>
+		<item key="DIALOG_WIDTH" value="414"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>
