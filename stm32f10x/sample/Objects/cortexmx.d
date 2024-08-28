@@ -1,1 +1,1 @@
-./objects/cortexmx.o: ..\Drivers\CortexMx.c
+./objects/cortexmx.o: ..\..\CortexMx\CortexMx.c

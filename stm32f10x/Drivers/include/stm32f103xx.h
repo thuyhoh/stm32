@@ -11,8 +11,8 @@
 
 
 /* base addresses of Flash and SRAM memories */
-#define FLASH_BASEADDR            0x08000000UL /*!< FLASH BASEADDR address in the alias region */
-#define FLASH_BANK1_END       		0x0801FFFFUL /*!< FLASH END address of bank1 */
+#define FLASH_MEM_BASEADDR            0x08000000UL /*!< FLASH BASEADDR address in the alias region */
+#define FLASH_MEM_BANK1_END       		0x0801FFFFUL /*!< FLASH END address of bank1 */
 
 	
 // bus base Address
@@ -32,8 +32,8 @@
 #define EXTI_BASEADDR		 (0x40010400U)
 
 /* Peripheral base address of AHB */
-#define RCC_BASEADDR		(0x40021000)
-
+#define RCC_BASEADDR		(0x40021000U)
+#define FLASH_BASEADDR	(0x40022000U)
 
 /* STRUCTURE OF PERIPHERAL */
 typedef struct
@@ -78,7 +78,18 @@ typedef struct
 	_vo uint32_t CSR;
 }RCC_RegDef_t;
 
-
+typedef struct
+{
+	_vo uint32_t ACR;
+	_vo uint32_t KEYR;
+	_vo uint32_t OPTKEYR;
+	_vo uint32_t SR;
+	_vo uint32_t CR;
+	_vo uint32_t AR;
+	uint32_t Reserved;
+	_vo uint32_t OBR;
+	_vo uint32_t WRPR;
+}FLASH_RegDef_t;
 
 /*!< Peripheral declaration */
 #define GPIOA_BASEPTR			((GPIO_RegDef_t*)GPIOA_BASEADDR)
@@ -90,6 +101,8 @@ typedef struct
 #define EXTI_BASEPTR			((EXTI_RegDef_t *)EXTI_BASEADDR)
 
 #define RCC_BASEPTR				((RCC_RegDef_t *)RCC_BASEADDR)
+
+#define FLASH_BASEPTR			((FLASH_RegDef_t *)FLASH_BASEADDR)
 
 /* Peripheral Clock Enable */
 #define GPIOA_PCLK_ENABLE()				RCC_BASEPTR->APB2ENR |= (1<<2)
@@ -112,6 +125,7 @@ typedef struct
 #define GPIOC_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<4); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<4);}while(0)
 
 #define AFIO_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<0); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<0);}while(0)
+
 /*
  * VECTOR TABLE
  */

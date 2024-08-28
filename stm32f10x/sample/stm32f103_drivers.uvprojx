@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers\include</IncludePath>
+              <IncludePath>..\Drivers\include;..\..\CortexMx\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -425,6 +425,16 @@
               <FilePath>..\Drivers\include\stm32f103xx.h</FilePath>
             </File>
             <File>
+              <FileName>stm32f103xx_dma_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\include\stm32f103xx_dma_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f103xx_flash_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\include\stm32f103xx_flash_driver.h</FilePath>
+            </File>
+            <File>
               <FileName>stm32f103xx_gpio_driver.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Drivers\include\stm32f103xx_gpio_driver.h</FilePath>
@@ -457,17 +467,27 @@
             <File>
               <FileName>CortexMx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\CortexMx.c</FilePath>
+              <FilePath>..\..\CortexMx\CortexMx.c</FilePath>
             </File>
             <File>
               <FileName>CortexMx_NVIC.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\CortexMx_NVIC.c</FilePath>
+              <FilePath>..\..\CortexMx\CortexMx_NVIC.c</FilePath>
             </File>
             <File>
               <FileName>CortexMx_SysTick_Timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\CortexMx_SysTick_Timer.c</FilePath>
+              <FilePath>..\..\CortexMx\CortexMx_SysTick_Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f103xx_dma_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\stm32f103xx_dma_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f103xx_flash_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\stm32f103xx_flash_driver.c</FilePath>
             </File>
             <File>
               <FileName>stm32f103xx_gpio_driver.c</FileName>
