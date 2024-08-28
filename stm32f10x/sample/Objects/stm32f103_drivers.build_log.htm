@@ -22,12 +22,49 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\2.Embedded\microtroller\STM32fx\stm32f10x\sample\stm32f103_drivers.uvprojx
-Project File Date:  08/26/2024
+Project File Date:  08/28/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Application'
-".\Objects\stm32f103_drivers.axf" - 0 Error(s), 0 Warning(s).
+../Drivers/CortexMx_NVIC.c(28): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   28 |         uint8_t shift_amount = (IPR_section*8) + (8 - NO_PR_BITS_IMPLEMENTED);
+      |                 ^
+../Drivers/CortexMx_NVIC.c(11): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   11 |                 *(NVIC_ISER_BASE + IRQ_offset) |= (1<<IRQ_index);
+      |                   ^~~~~~~~~~~~~~
+../Drivers/include/CortexMx.h(46): note: expanded from macro 'NVIC_ISER_BASE'
+   46 | #define NVIC_ISER_BASE                                                                                                                                  ((_vo uint32_t *)0xE000E100U)
+      |                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/CortexMx_NVIC.c(14): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   14 |                 *(NVIC_ICER_BASE + IRQ_offset) |= (1<<IRQ_index);
+      |                   ^~~~~~~~~~~~~~
+../Drivers/include/CortexMx.h(48): note: expanded from macro 'NVIC_ICER_BASE'
+   48 | #define NVIC_ICER_BASE                                                                                                                                  ((_vo uint32_t *)0xE000E180U)
+      |                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/CortexMx_NVIC.c(25): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   25 |         *(NVIC_IPR_BASE + IPR_offset) &=  (uint32_t)~(0xff << (IPR_section*8));
+      |           ^~~~~~~~~~~~~
+../Drivers/include/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
+   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
+      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/CortexMx_NVIC.c(29): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   29 |         *(NVIC_IPR_BASE + IPR_offset) |=  (uint32_t)(IRQPriority << shift_amount );
+      |           ^~~~~~~~~~~~~
+../Drivers/include/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
+   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
+      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/CortexMx_NVIC.c(40): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
+   40 |         uint32_t RegVal = (*(NVIC_IPR_BASE + IPR_offset) & 0xffffffff)>>(shift_amount);
+      |                              ^~~~~~~~~~~~~
+../Drivers/include/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
+   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
+      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+compiling CortexMx_NVIC.c...
+linking...
+Program Size: Code=776 RO-data=252 RW-data=0 ZI-data=1632  
+".\Objects\stm32f103_drivers.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,9 +91,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@5.6.0
 
    * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
       Include file:  RTE_Driver/Config/RTE_Device.h
-      Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/startup_stm32f10x_md.s
 Build Time Elapsed:  00:00:00
 </pre>

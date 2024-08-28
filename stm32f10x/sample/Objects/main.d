@@ -1,5 +1,7 @@
 ./objects/main.o: main.c main.h C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  ..\Driver\include\stm32f103xx.h ..\Driver\include\CortexM3.h \
+  ..\Drivers\include\stm32f103xx.h ..\Drivers\include\CortexMx_NVIC.h \
+  ..\Drivers\include\CortexMx.h \
+  ..\Drivers\include\CortexMx_SysTick_Timer.h \
   C:\Users\ASUS\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
   RTE\_Application\RTE_Components.h \
   C:\Users\ASUS\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h \
