@@ -11,6 +11,9 @@
 #define SET					HIGH
 #define RESET				LOW
 
+#define GPIO_PIN_HIGH		HIGH
+#define GPIO_PIN_LOW		LOW
+
 #define ENABLE			SET
 #define DISABLE			RESET
 
@@ -98,6 +101,8 @@ typedef struct
 void GPIO_Init(GPIO_Handle_t *pGPIO_Handle);
 void GPIO_DeInit(GPIO_RegDef_t *pGPIO);
 
+void GPIO_DigitalInput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
+void GPIO_DigitalOutput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 /* Read From Input Pin */
 uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIO);
@@ -107,6 +112,9 @@ void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber, uint8_t PinS
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIO, uint16_t PortState);
 
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
+
+void GPIO_SetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
+void GPIO_ResetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 
 /* IRQ Configuration and ISR handling */
 void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t Priority, uint8_t EnorDi);

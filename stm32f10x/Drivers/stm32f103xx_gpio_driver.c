@@ -111,6 +111,25 @@ void GPIO_Init(GPIO_Handle_t *pGPIO_Handle)
 	}
 }
 
+void GPIO_DigitalInput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
+{
+	GPIO_Handle_t tmp;
+	tmp.GPIO_Config.PinNumber = PinNumber;
+	tmp.GPIO_Config.PinMode   = GPIO_INPUT_PU_PD;
+	tmp.pGPIO				          = pGPIO;
+	GPIO_Init(&tmp);
+}
+
+
+void GPIO_DigitalOutput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
+{
+	GPIO_Handle_t tmp;
+	tmp.GPIO_Config.PinNumber = PinNumber;
+	tmp.GPIO_Config.PinMode   = GPIO_OUTPUT_50MHZ_GP_PP_MODE;
+	tmp.pGPIO				          = pGPIO;
+	GPIO_Init(&tmp);
+}
+
 /****************************************************************************
  * @fn	  				- 			GPIO_DeInit
 
@@ -234,6 +253,42 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIO, uint16_t PortState)
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 {
 	pGPIO->ODR ^= (1<<PinNumber);
+}
+
+/****************************************************************************
+ * @fn	  				- 			GPIO_SetPin
+
+ * @brief  				- 
+
+ * @param[]  			-  
+ * @param[]  			- 
+ * @param[]  			- 
+
+ * @return 				- 
+
+ * @note	  			- 
+****************************************************************************/
+void GPIO_SetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
+{
+	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_HIGH);
+}
+
+/****************************************************************************
+ * @fn	  				- 			GPIO_ResetPin
+
+ * @brief  				- 
+
+ * @param[]  			-  
+ * @param[]  			- 
+ * @param[]  			- 
+
+ * @return 				- 
+
+ * @note	  			- 
+****************************************************************************/
+void GPIO_ResetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
+{
+	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_LOW);
 }
 
 /****************************************************************************
