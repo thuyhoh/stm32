@@ -8,9 +8,9 @@ button/stm32f1xx_hal_tim.o: \
   ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xb.h \
   ..\Drivers\CMSIS\Include\core_cm3.h \
   C:\Keil_v5\ARM\ARMCLANG\include\stdint.h \
-  E:\2.Embedded\microtroller\3.stm32fx\reg\stm32f1_deviot\button\Drivers\CMSIS\Include\cmsis_version.h \
-  E:\2.Embedded\microtroller\3.stm32fx\reg\stm32f1_deviot\button\Drivers\CMSIS\Include\cmsis_compiler.h \
-  E:\2.Embedded\microtroller\3.stm32fx\reg\stm32f1_deviot\button\Drivers\CMSIS\Include\cmsis_armclang.h \
+  E:\2.Embedded\microtroller\STM32fx\stm32fx_hal\button\Drivers\CMSIS\Include\cmsis_version.h \
+  E:\2.Embedded\microtroller\STM32fx\stm32fx_hal\button\Drivers\CMSIS\Include\cmsis_compiler.h \
+  E:\2.Embedded\microtroller\STM32fx\stm32fx_hal\button\Drivers\CMSIS\Include\cmsis_armclang.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h \
   C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h \
   ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h \

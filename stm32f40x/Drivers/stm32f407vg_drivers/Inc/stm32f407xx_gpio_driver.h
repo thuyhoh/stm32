@@ -7,7 +7,7 @@
 #ifndef __STM32F407XX_GPIO_DRIVER_H_
 #define __STM32F407XX_GPIO_DRIVER_H_
 
-#include "stm32f407vg.h"
+#include "stm32f407xx.h"
 
 /*
  * 
@@ -41,7 +41,7 @@ typedef struct
 #define GPIO_PIN_7			7
 #define GPIO_PIN_8			8
 #define GPIO_PIN_9			9
-#define GPIO_PIN_19			10
+#define GPIO_PIN_10			10
 #define GPIO_PIN_11			11
 #define GPIO_PIN_12			12
 #define GPIO_PIN_13			13
@@ -79,6 +79,25 @@ typedef struct
 #define GPIO_NO_PP			0
 #define GPIO_PU				  1
 #define GPIO_PD				  2
+
+/**/
+#define GPIO_AF_AF0			0
+#define GPIO_AF_AF1			1
+#define GPIO_AF_AF2			2
+#define GPIO_AF_AF3			3
+#define GPIO_AF_AF4			4
+#define GPIO_AF_AF5			5
+#define GPIO_AF_AF6			6
+#define GPIO_AF_AF7			7
+#define GPIO_AF_AF8			8
+#define GPIO_AF_AF9			9
+#define GPIO_AF_AF10		10
+#define GPIO_AF_AF11		11
+#define GPIO_AF_AF12		12
+#define GPIO_AF_AF13		13
+#define GPIO_AF_AF14		14
+#define GPIO_AF_AF15		15
+
 
 #define GPIO_BASEADDR_TO_CODE(x)			( (x == GPIOA_BASE) ?0:\
 																				(x == GPIOB_BASE) ?1:\
