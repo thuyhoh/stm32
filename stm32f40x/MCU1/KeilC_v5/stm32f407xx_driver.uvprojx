@@ -389,6 +389,11 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -400,9 +405,9 @@
               <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h</FilePath>
             </File>
             <File>
-              <FileName>stm32f407vg.h</FileName>
+              <FileName>stm32f407xx.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407vg.h</FilePath>
+              <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h</FilePath>
             </File>
             <File>
               <FileName>stm32f407xx_gpio_driver.h</FileName>
@@ -453,6 +458,16 @@
               <FileName>stm32f407xx_uart_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_uart_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>example</GroupName>
+          <Files>
+            <File>
+              <FileName>002spi_tx_Testing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\002spi_tx_Testing.c</FilePath>
             </File>
           </Files>
         </Group>

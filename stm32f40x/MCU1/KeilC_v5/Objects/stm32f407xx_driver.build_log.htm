@@ -22,99 +22,45 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\KeilC_v5\stm32f407xx_driver.uvprojx
-Project File Date:  08/28/2024
+Project File Date:  08/31/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Application'
-../../Drivers/stm32f407vg_drivers/Src/CortexM4.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
-  278 | #endif /* __CORTEXM4_H_ */
-      |                           ^
-1 warning generated.
-compiling CortexM4.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(10): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407vg.h(12): warning: In file included from...
+Build target 'Application'
+main.c(2): warning: In file included from...
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(13): warning: In file included from...
 ../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
   278 | #endif /* __CORTEXM4_H_ */
       |                           ^
-1 warning generated.
-compiling stm32f407xx_spi_driver.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_i2c_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(10): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407vg.h(12): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
-  278 | #endif /* __CORTEXM4_H_ */
-      |                           ^
-1 warning generated.
-compiling stm32f407xx_i2c_driver.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(10): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407vg.h(12): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
-  278 | #endif /* __CORTEXM4_H_ */
-      |                           ^
-1 warning generated.
-compiling stm32f407xx_uart_driver.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(8): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_gpio_driver.h(10): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407vg.h(12): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
-  278 | #endif /* __CORTEXM4_H_ */
-      |                           ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(155): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  155 |                 uint8_t tmp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
-      |                         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(8): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_gpio_driver.h(25): warning: padding size of 'GPIO_Handle_t' with 2 bytes to alignment boundary [-Wpadded]
-   25 | typedef struct
+main.c(2): warning: In file included from...
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(207): warning: 'SET' macro redefined [-Wmacro-redefined]
+  207 | #define SET                                                                     ENABLE
       |         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(406): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  406 |         uint8_t shift_amount = (iprx_Section*8) + (8 - NO_PR_BITS_IMPLEMENTED);
-      |                 ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(159): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  159 |                 SYSCFG_BASE->EXTICR[tmp1] |= (uint32_t)PortCode<<(tmp2*4);
-      |                 ^~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407vg.h(211): note: expanded from macro 'SYSCFG_BASE'
-  211 | #define SYSCFG_BASE                             ((SYSCFG_RegDef_t *)SYSCFG_BASEADDR)
-      |                                                 ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(194): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  194 |                 pGPIOHandle->pGPIOx->AFR[temp1] |= (uint32_t)~(0xf<< (4*temp2));
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(195): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  195 |                 pGPIOHandle->pGPIOx->AFR[temp1] |= (uint32_t)(pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode << (4*temp2));
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(403): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  403 |         *(NVIC_IPR_BASE+iprx) &=  (uint32_t)~(0xff << (iprx_Section*8));
-      |           ^~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(33): note: expanded from macro 'NVIC_IPR_BASE'
-   33 | #define NVIC_IPR_BASE                           ((_vo uint32_t *)0xE000E400)  /* <! NVIC_IPR > */
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(407): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  407 |         *(NVIC_IPR_BASE + iprx) |=  (uint32_t)(IRQPriority << shift_amount );
-      |           ^~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(33): note: expanded from macro 'NVIC_IPR_BASE'
-   33 | #define NVIC_IPR_BASE                           ((_vo uint32_t *)0xE000E400)  /* <! NVIC_IPR > */
-      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-9 warnings generated.
-compiling stm32f407xx_gpio_driver.c...
-main.c(3): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(12): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/CortexM4.h(278): warning: no newline at end of file [-Wnewline-eof]
-  278 | #endif /* __CORTEXM4_H_ */
-      |                           ^
-1 warning generated.
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(18): note: previous definition is here
+   18 | #define SET                     HIGH
+      |         ^
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(208): warning: 'RESET' macro redefined [-Wmacro-redefined]
+  208 | #define RESET                                                           DISABLE
+      |         ^
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(19): note: previous definition is here
+   19 | #define RESET           LOW
+      |         ^
+main.c(2): warning: In file included from...
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407vg.h(586): warning: In file included from...
+../../Drivers/stm32f407vg_drivers/Inc/stm32f407xx_spi_driver.h(23): warning: padding size of 'SPI_Handle_t' with 1 byte to alignment boundary [-Wpadded]
+   23 | typedef struct
+      |         ^
+main.c(6): warning: no previous extern declaration for non-static variable 'SPI2Handle' [-Wmissing-variable-declarations]
+    6 | SPI_Handle_t SPI2Handle;
+      |              ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    6 | SPI_Handle_t SPI2Handle;
+      | ^
+5 warnings generated.
 compiling main.c...
-RTE/Device/STM32F407VGTx/system_stm32f4xx.c(263): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  263 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
-      |         ^~~~~~~~~~~~~
-1 warning generated.
-compiling system_stm32f4xx.c...
-assembling startup_stm32f407xx.s...
 linking...
-Program Size: Code=420 RO-data=408 RW-data=0 ZI-data=1632  
-".\Objects\stm32f407xx_driver.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=1208 RO-data=408 RW-data=0 ZI-data=1648  
+".\Objects\stm32f407xx_driver.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -140,9 +86,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@5.6.0
 
    * Component: Keil::Device:Startup@2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
-      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
       Source file:   MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
 Build Time Elapsed:  00:00:01

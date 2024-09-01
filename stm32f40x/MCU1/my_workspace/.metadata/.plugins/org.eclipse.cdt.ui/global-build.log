@@ -1,6 +1,5 @@
-14:40:42 **** Incremental Build of configuration Debug for project stm32f407xx_driver ****
+10:03:36 **** Incremental Build of configuration Debug for project stm32f407xx_driver ****
 make -j12 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"E:/2.Embedded/microtroller/STM32fx/stm32f40x/MCU1/my_workspace/stm32f407xx_driver/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "stm32f407xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\my_workspace\stm32f407xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
 E:/2.Embedded/microtroller/STM32fx/stm32f40x/MCU1/my_workspace/stm32f407xx_driver/Debug/../Src/main.c:41: undefined reference to `GPIO_PeriClockControl'
