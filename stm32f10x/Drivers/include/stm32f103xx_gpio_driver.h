@@ -1,8 +1,8 @@
 #ifndef _STM32F103XX_GPIO_DRIVE_H
 #define _STM32F103XX_GPIO_DRIVE_H
 
+
 #include "stm32f103xx.h"
-#include "stdint.h"
 
 /* Macro */
 #define LOW 				0
@@ -11,8 +11,8 @@
 #define SET					HIGH
 #define RESET				LOW
 
-#define GPIO_PIN_HIGH		HIGH
-#define GPIO_PIN_LOW		LOW
+#define GPIO_PIN_SET		HIGH
+#define GPIO_PIN_RESET		LOW
 
 #define ENABLE			SET
 #define DISABLE			RESET
@@ -21,14 +21,14 @@
 
 typedef struct 
 {
-	uint8_t PinNumber;  /* <! the number of pin in GPIO @GPIO_PinNumber > */
-	uint8_t PinMode;		/* <! the number of pin in GPIO @GPIO_PinMode > */
-	uint8_t PinLock;		/* <! the number of pin in GPIO @GPIO_PinLock > */
+	uint8_t GPIO_PinNumber;  /* <! the number of pin in GPIO @GPIO_PinNumber > */
+	uint8_t GPIO_PinMode;		/* <! the number of pin in GPIO @GPIO_PinMode > */
+	uint8_t GPIO_PinLock;		/* <! the number of pin in GPIO @GPIO_PinLock > */
 }GPIO_Config_t;
 
 typedef struct
 {
-	GPIO_RegDef_t *pGPIO;
+	GPIO_RegDef_t *pGPIOx;
 	GPIO_Config_t GPIO_Config;
 }GPIO_Handle_t;
 
@@ -51,6 +51,8 @@ typedef struct
 #define GPIO_PIN_13				13
 #define GPIO_PIN_14				14
 #define GPIO_PIN_15				15
+
+
 
 /* @GPIO_PinMode
  * the mode of pin in GPIO
@@ -89,8 +91,6 @@ typedef struct
 #define GPIO_PIN_LOCK			ENABLE
 #define GPIO_PIN_UNLOCK		DISABLE
 
-#define GPIO_PIN_SET			SET
-#define GPIO_PIN_RESET 		RESET
 
 /*  */
 #define GPIO_BASEADDR_TO_CODE(x)	( ((x) == GPIOA_BASEPTR) ?0:\

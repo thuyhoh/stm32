@@ -3,11 +3,16 @@
 
 #include "stdint.h"
 
-/* NVIC */
-#include "CortexMx_NVIC.h"
+#include "CortexMx.h"
 
-/* SysTick Timer */
-#include "CortexMx_SysTick_Timer.h"
+
+
+/* Macro */
+#define HIGH		1
+#define LOW			0
+
+#define FLAG_SET				1
+#define FLAG_RESET			0
 
 
 /* base addresses of Flash and SRAM memories */
@@ -22,6 +27,9 @@
 
 /* Peripheral base address of APB1 */
 
+#define SPI2_BASEADDR			(0x40003800U)
+#define SPI3_BASEADDR			(0x40003C00U)
+
 /* Peripheral base address of APB2 */
 #define GPIOA_BASEADDR  (APB2_BASEADDR + 0x0800)
 #define GPIOB_BASEADDR  (APB2_BASEADDR + 0x0C00)
@@ -30,6 +38,10 @@
 #define AFIO_BASEADDR		 (APB2_BASEADDR + 0x000)
 
 #define EXTI_BASEADDR		 (0x40010400U)
+
+#define SPI1_BASEADDR			(0x40013000U)
+
+
 
 /* Peripheral base address of AHB */
 #define RCC_BASEADDR		(0x40021000U)
@@ -91,6 +103,19 @@ typedef struct
 	_vo uint32_t WRPR;
 }FLASH_RegDef_t;
 
+typedef struct
+{
+	_vo uint32_t CR1;
+	_vo uint32_t CR2;
+	_vo uint32_t SR;
+	_vo uint32_t DR;
+	_vo uint32_t CRCPR;
+	_vo uint32_t RXCRCR;
+	_vo uint32_t TXCRCR;
+	_vo uint32_t I2SCFGR;
+	_vo uint32_t I2SPR;
+}SPI_RegDef_t;
+
 /*!< Peripheral declaration */
 #define GPIOA_BASEPTR			((GPIO_RegDef_t*)GPIOA_BASEADDR)
 #define GPIOB_BASEPTR			((GPIO_RegDef_t*)GPIOB_BASEADDR)
@@ -104,27 +129,16 @@ typedef struct
 
 #define FLASH_BASEPTR			((FLASH_RegDef_t *)FLASH_BASEADDR)
 
-/* Peripheral Clock Enable */
-#define GPIOA_PCLK_ENABLE()				RCC_BASEPTR->APB2ENR |= (1<<2)
-#define GPIOB_PCLK_ENABLE()				RCC_BASEPTR->APB2ENR |= (1<<3)
-#define GPIOC_PCLK_ENABLE()				RCC_BASEPTR->APB2ENR |= (1<<4)
+#define SPI1_BASEPTR			((SPI_RegDef_t *)SPI1_BASEADDR)
+#define SPI2_BASEPTR			((SPI_RegDef_t *)SPI2_BASEADDR)
+#define SPI3_BASEPTR			((SPI_RegDef_t *)SPI3_BASEADDR)
 
-#define AFIO_PCLK_ENABLE()				RCC_BASEPTR->APB2ENR |= (1<<0)
-
-
-/* Peripheral Clock Disable */
-#define GPIOA_PCLK_DISABLE()				RCC_BASEPTR->APB2ENR &= (uint32_t)~(1<<2)
-#define GPIOB_PCLK_DISABLE()				RCC_BASEPTR->APB2ENR &= (uint32_t)~(1<<3)
-#define GPIOC_PCLK_DISABLE()				RCC_BASEPTR->APB2ENR &= (uint32_t)~(1<<4)
-
-#define AFIO_PCLK_DISABLE()				  RCC_BASEPTR->APB2ENR &= (uint32_t)~(1<<0)
-
-/* Pheripheral Register Reset */
-#define GPIOA_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<2); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<2);}while(0)
-#define GPIOB_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<3); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<3);}while(0)
-#define GPIOC_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<4); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<4);}while(0)
-
-#define AFIO_REG_RESET()						do{RCC_BASEPTR->APB2RSTR |= (1<<0); RCC_BASEPTR->APB2RSTR &= (uint32_t)~(1<<0);}while(0)
+/* INCLUDE */
+#include "stm32f103xx_gpio_driver.h"
+#include "stm32f103xx_rcc_driver.h"
+#include "stm32f103xx_spi_driver.h"
+#include "stm32f103xx_i2c_driver.h"
+#include "stm32f103xx_uart_driver.h"
 
 /*
  * VECTOR TABLE
@@ -138,6 +152,10 @@ typedef struct
 
 #define IRQNO_EXTI9_5               IRQ30
 #define IRQNO_EXTI15_10             IRQ40
+
+#define IRQNO_SPI1                 IRQ35
+#define IRQNO_SPI2                 IRQ36
+#define IRQNO_SPI3                IRQ51
 /*
 #define                  IRQ0
 #define                  IRQ1
@@ -170,8 +188,7 @@ typedef struct
 #define                  IRQ32
 #define                  IRQ33
 #define                  IRQ34
-#define                  IRQ35
-#define                  IRQ36
+
 #define                  IRQ37
 #define                  IRQ38
 #define                  IRQ39
@@ -186,7 +203,7 @@ typedef struct
 #define                  IRQ48
 #define                  IRQ49
 #define                  IRQ50
-#define                  IRQ51
+
 #define                  IRQ52
 #define                  IRQ53
 #define                  IRQ54

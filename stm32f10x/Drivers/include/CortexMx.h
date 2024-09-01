@@ -4,9 +4,11 @@
 #include "stdint.h"
 
 #define _vo 																								volatile
-
+#define _noreturn																						__attribute__((noreturn))
 
 /* BIT BANDING */
+#include "CortexMx_BitBand.h"
+
 #define SRAM_BASEADDR																				0x20000000UL /*!< SRAM BASE ADDRESS >*/
 #define SRAM_ALIAS_BASEADDR																	0x22000000U
 
@@ -14,13 +16,8 @@
 #define PERI_ALIAS_BASEADDR																	0x42000000UL
 
 
-/* Macro of IRQ Status */
-#define ENABLE_IRQ																					1
-#define DISABLE_IRQ																					0
-
-	
-
 /* Systick Timer */
+#include "CortexMx_SysTick_Timer.h"
 
 #define SYSTICK_BASEADDR																			0xE000E010u
 
@@ -32,13 +29,11 @@ typedef struct
 	uint32_t CALIB;
 }SysTick_RegDef_t;																							
 
-
-
 #define SYSTICK_BASEPTR																				(SysTick_RegDef_t *)SYSTICK_BASEADDR
 
 
-
 /* NVIC */
+#include "CortexMx_NVIC.h"
 
 /* base address of NVIC */
 #define NVIC_ICTR_BASE																	((_vo uint32_t *)0xE000E004U)
@@ -57,6 +52,6 @@ typedef struct
 
 
 
-
+void Switch_SpToPSP(void);
 
 #endif	/* __CortexMX_H_ */

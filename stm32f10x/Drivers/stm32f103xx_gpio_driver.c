@@ -26,6 +26,9 @@ static void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIO, uint8_t EnorDis)
 		}else if(pGPIO == GPIOC_BASEPTR)
 		{
 			GPIOC_PCLK_ENABLE();
+		}else 
+		{
+			// error
 		}
 	}else
 	{
@@ -38,6 +41,9 @@ static void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIO, uint8_t EnorDis)
 		}else if(pGPIO == GPIOC_BASEPTR)
 		{
 			GPIOC_PCLK_DISABLE();
+		}else
+		{
+			// error
 		}
 	}
 }
@@ -57,21 +63,21 @@ static void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIO, uint8_t EnorDis)
 ****************************************************************************/
 void GPIO_Init(GPIO_Handle_t *pGPIO_Handle)
 {
-	GPIO_PeriClockControl(pGPIO_Handle->pGPIO,ENABLE);
+	GPIO_PeriClockControl(pGPIO_Handle->pGPIOx,ENABLE);
 	 
-	if(pGPIO_Handle->GPIO_Config.PinMode <= GPIO_OUTPUT_50MHZ_AF_OD_MODE) // Base mode
+	if(pGPIO_Handle->GPIO_Config.GPIO_PinMode <= GPIO_OUTPUT_50MHZ_AF_OD_MODE) // Base mode
 	{
-		uint8_t tmp1 = pGPIO_Handle->GPIO_Config.PinNumber / 8;
-		uint8_t tmp2 = pGPIO_Handle->GPIO_Config.PinNumber % 8;
-		uint32_t tmp = (uint32_t)(pGPIO_Handle->GPIO_Config.PinMode << (tmp2*4));
-		pGPIO_Handle->pGPIO->CR[tmp1] |= tmp;
+		uint8_t tmp1 = pGPIO_Handle->GPIO_Config.GPIO_PinNumber / 8;
+		uint8_t tmp2 = pGPIO_Handle->GPIO_Config.GPIO_PinNumber % 8;
+		uint32_t tmp = (uint32_t)(pGPIO_Handle->GPIO_Config.GPIO_PinMode << (tmp2*4));
+		pGPIO_Handle->pGPIOx->CR[tmp1] |= tmp;
 	}else		// IRQ mode
 	{
 		/* 1. Configure Pin -> Input Mode */
 		GPIO_Handle_t tmp;
-		tmp.GPIO_Config.PinNumber = pGPIO_Handle->GPIO_Config.PinNumber;
-		tmp.GPIO_Config.PinMode   = GPIO_INPUT_PU_PD;
-		tmp.pGPIO				          = pGPIO_Handle->pGPIO;
+		tmp.GPIO_Config.GPIO_PinNumber = pGPIO_Handle->GPIO_Config.GPIO_PinNumber;
+		tmp.GPIO_Config.GPIO_PinMode   = GPIO_INPUT_PU_PD;
+		tmp.pGPIOx				          = pGPIO_Handle->pGPIOx;
 		GPIO_Init(&tmp);
 		
 		/* 2. AFIO clock enable */
@@ -79,44 +85,44 @@ void GPIO_Init(GPIO_Handle_t *pGPIO_Handle)
 		
 		/* 3. Configure the GPIO port select in AFIO_EXTICR */
 		// find position of the EXTICR[]
-		uint8_t AFIO_EXTICR_offset  = pGPIO_Handle->GPIO_Config.PinNumber / 4;
-		uint8_t AFIO_EXTICR_section = pGPIO_Handle->GPIO_Config.PinNumber % 4;
+		uint8_t AFIO_EXTICR_offset  = pGPIO_Handle->GPIO_Config.GPIO_PinNumber / 4;
+		uint8_t AFIO_EXTICR_section = pGPIO_Handle->GPIO_Config.GPIO_PinMode % 4;
 		
-		uint8_t PortCode = GPIO_BASEADDR_TO_CODE(pGPIO_Handle->pGPIO);
+		uint8_t PortCode = GPIO_BASEADDR_TO_CODE(pGPIO_Handle->pGPIOx);
 		
 		AFIO_BASEPTR->EXTICR[AFIO_EXTICR_offset] |=  (uint32_t)(PortCode<<(AFIO_EXTICR_section * 8));
 		
 		/* 4. Configure the trigger edge selection  of EXTI_FTSR EXTI_RTSR*/  
-		if(pGPIO_Handle->GPIO_Config.PinMode == GPIO_IT_FT_MODE) /* Falling trigger */
+		if(pGPIO_Handle->GPIO_Config.GPIO_PinMode == GPIO_IT_FT_MODE) /* Falling trigger */
 		{		/* Falling trigger */
 			// Configure EXTI_FTSR
-			EXTI_BASEPTR->FTSR |= (1<<pGPIO_Handle->GPIO_Config.PinNumber);
-			EXTI_BASEPTR->RTSR &= (uint32_t)~(1<<pGPIO_Handle->GPIO_Config.PinNumber);
+			EXTI_BASEPTR->FTSR |= (1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
+			EXTI_BASEPTR->RTSR &= (uint32_t)~(1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
 		}
-		else if(pGPIO_Handle->GPIO_Config.PinMode == GPIO_IT_RT_MODE) 
+		else if(pGPIO_Handle->GPIO_Config.GPIO_PinMode == GPIO_IT_RT_MODE) 
 		{		/* Rising trigger */
 			// Configure EXTI_RTSR
-			EXTI_BASEPTR->FTSR &= (uint32_t)~(1<<pGPIO_Handle->GPIO_Config.PinNumber);
-			EXTI_BASEPTR->RTSR |= (1<<pGPIO_Handle->GPIO_Config.PinNumber);
+			EXTI_BASEPTR->FTSR &= (uint32_t)~(1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
+			EXTI_BASEPTR->RTSR |= (1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
 		}
 		else	
 		{		/* Falling and Rising trigger */
 			// Configure EXTI_FTSR and EXTI_RTSR
-			EXTI_BASEPTR->FTSR |= (1<<pGPIO_Handle->GPIO_Config.PinNumber);
-			EXTI_BASEPTR->RTSR |= (1<<pGPIO_Handle->GPIO_Config.PinNumber);
+			EXTI_BASEPTR->FTSR |= (1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
+			EXTI_BASEPTR->RTSR |= (1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
 		}
 		
 		/* 5.  Configure the mask bits of EXTI_IMR */
-		EXTI_BASEPTR->IMR |= (1<<pGPIO_Handle->GPIO_Config.PinNumber);
+		EXTI_BASEPTR->IMR |= (1<<pGPIO_Handle->GPIO_Config.GPIO_PinNumber);
 	}
 }
 
 void GPIO_DigitalInput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 {
 	GPIO_Handle_t tmp;
-	tmp.GPIO_Config.PinNumber = PinNumber;
-	tmp.GPIO_Config.PinMode   = GPIO_INPUT_PU_PD;
-	tmp.pGPIO				          = pGPIO;
+	tmp.GPIO_Config.GPIO_PinNumber = PinNumber;
+	tmp.GPIO_Config.GPIO_PinMode   = GPIO_INPUT_PU_PD;
+	tmp.pGPIOx				          = pGPIO;
 	GPIO_Init(&tmp);
 }
 
@@ -124,9 +130,9 @@ void GPIO_DigitalInput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 void GPIO_DigitalOutput(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 {
 	GPIO_Handle_t tmp;
-	tmp.GPIO_Config.PinNumber = PinNumber;
-	tmp.GPIO_Config.PinMode   = GPIO_OUTPUT_50MHZ_GP_PP_MODE;
-	tmp.pGPIO				          = pGPIO;
+	tmp.GPIO_Config.GPIO_PinNumber = PinNumber;
+	tmp.GPIO_Config.GPIO_PinMode   = GPIO_OUTPUT_50MHZ_GP_PP_MODE;
+	tmp.pGPIOx				          = pGPIO;
 	GPIO_Init(&tmp);
 }
 
@@ -270,7 +276,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 ****************************************************************************/
 void GPIO_SetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 {
-	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_HIGH);
+	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_SET);
 }
 
 /****************************************************************************
@@ -288,7 +294,7 @@ void GPIO_SetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 ****************************************************************************/
 void GPIO_ResetPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 {
-	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_LOW);
+	GPIO_WriteToOutputPin(pGPIO, PinNumber, GPIO_PIN_RESET);
 }
 
 /****************************************************************************

@@ -3,6 +3,7 @@
 
 #include "CortexMx.h"
 
+/* Macro of IRQ Status */
 
 #define IRQ_ENABLE					1
 #define IRQ_DISABLE					0
