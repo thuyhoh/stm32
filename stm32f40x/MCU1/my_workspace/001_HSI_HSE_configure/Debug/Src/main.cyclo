@@ -1,1 +1,4 @@
-../Src/main.c:28:5:main	1
+../Src/main.c:36:5:main	1
+../Src/main.c:48:6:HSI_Configure	1
+../Src/main.c:59:6:HSE_Configure	2
+../Src/main.c:77:6:GPIOA_PA8_AF_configure	1

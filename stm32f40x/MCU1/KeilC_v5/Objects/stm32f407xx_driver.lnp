@@ -1,11 +1,14 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
-".\objects\cortexm4.o"
+".\objects\cortexmx.o"
+".\objects\cortexmx_nvic.o"
+".\objects\cortexmx_systick_timer.o"
 ".\objects\stm32f407xx_gpio_driver.o"
 ".\objects\stm32f407xx_i2c_driver.o"
 ".\objects\stm32f407xx_spi_driver.o"
 ".\objects\stm32f407xx_uart_driver.o"
 ".\objects\002spi_tx_testing.o"
+".\objects\001_hse_hsi_configure.o"
 ".\objects\startup_stm32f407xx.o"
 ".\objects\system_stm32f4xx.o"
 --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

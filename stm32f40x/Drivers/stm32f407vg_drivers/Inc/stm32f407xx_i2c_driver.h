@@ -7,7 +7,8 @@
 #ifndef __STM32F407XX_SPI_DRIVER_H_
 #define __STM32F407XX_SPI_DRIVER_H_
 
-#include "stm32f407vg.h"
+#include "stm32f407xx.h"
+#include "stm32f407xx_rcc_driver.h"
 
 
 

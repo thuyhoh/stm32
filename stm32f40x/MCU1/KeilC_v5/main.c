@@ -1,29 +1,84 @@
-/* copy file and run in main.c */
-#include "stm32f407vg.h"
-#include "string.h"
+#include "main.h"
+#include <stdint.h>
 
-void SPI2_Config(void);
-SPI_Handle_t SPI2Handle;
+#define RCC_BASE_ADDR 		0x40023800UL
+
+#define RCC_CFGR_REG_OFFSET		0x08
+
+#define RCC_CR_REG_OFFSET       0x00
+
+#define RCC_CFGR_REG_ADDR		(RCC_BASE_ADDR + RCC_CFGR_REG_OFFSET)
+
+#define RCC_CR_REG_ADDR			(RCC_BASE_ADDR + RCC_CR_REG_OFFSET)
+
+
+#define GPIOA_BASE_ADDR			0x40020000UL
+
+void HSI_Mesurement(void);
+void HSE_Mesurement(void);
+void GPIOA_PA8_AF_configure(void);
 
 int main(void)
 {
-	char data[] = "hello world ";
-	SPI2_Config();
-	SPI_Start(SPI2Handle.pSPIx);
-	SPI_Send(SPI2_BASE, (uint8_t *)data, strlen(data));
-	while(1);
+	GPIO_Handle_t pGPIOHandle;
+	pGPIOHandle.pGPIOx = GPIOA_BASE;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinMode = GPIO_PIN_8;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTF;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF_AF0;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_NO_PP;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinSpeed = GPIO_OP_VHIGH;
+	pGPIOHandle.GPIO_PinConfig.GPIO_PinOPType = GPIO_OTYPER_PP;
+
+
+	HSI_Mesurement();
+
+	GPIO_Init(&pGPIOHandle);
+
+	/* Loop forever */
+	while(1){}
 }
 
-void SPI2_Config(void)
+void HSI_Mesurement(void)
 {
-	
-	SPI2Handle.pSPIx = SPI2_BASE;
-	SPI2Handle.SPI_Config.SPI_BusConfig = SPI_BUS_CONFIG_FD;
-	SPI2Handle.SPI_Config.SPI_DeviceMode = SPI_DEVICE_MASTER_MODE;
-	SPI2Handle.SPI_Config.SPI_SclkSpeed = SPI_SCLK_SPEED_DIV2;
-	SPI2Handle.SPI_Config.SPI_DFF = SPI_DFF_8BITS;
-	SPI2Handle.SPI_Config.SPI_CPOL = SPI_CPOL_LOW;
-	SPI2Handle.SPI_Config.SPI_CPHA = SPI_CPHA_LOW;
-	SPI2Handle.SPI_Config.SPI_SSM = SPI_SSM_EN;
-	SPI_Init(&SPI2Handle);
+	uint32_t *pRCCCFGRreg = (uint32_t *)RCC_CFGR_REG_ADDR;
+
+	// 1. configure the RCC_CFGR MCO1 bit fields to select HSI clock source.
+	*pRCCCFGRreg &= ~(0x3<<21);
+
+	// configure MCO1 prescaler
+	*pRCCCFGRreg |= (1<<24);
+}
+
+void HSE_Mesurement(void)
+{
+	uint32_t *pRCCCRreg = (uint32_t *)RCC_CR_REG_ADDR;
+	uint32_t *pRCCCFGRreg = (uint32_t *)RCC_CFGR_REG_ADDR;
+	// 1. enable the HSE clock using HSEON bit
+	*pRCCCRreg |= (1 << 16);
+	// 2. wait until HSE clock from the external crystal ready
+	while(!(*pRCCCRreg & (1<<17))){}
+	// 3. switch the system clock to HSE
+	*pRCCCFGRreg |= (1 << 0);
+	// 4.
+	// 1. configure the RCC_CFGR MCO1 bit fields to select HSI clock source.
+	*pRCCCFGRreg &= ~(0x3<<21);
+	*pRCCCFGRreg |= (0x2<<21);
+	// configure MCO1 prescaler
+	*pRCCCFGRreg |= (1<<24);
+}
+
+void GPIOA_PA8_AF_configure(void)
+{
+	// 2. configure FA8 to AF0 mode to behave as MCO1 signal
+	uint32_t *pRCCAHB1ENR = (uint32_t *)(RCC_BASE_ADDR + 0x30);
+	*pRCCAHB1ENR |= (1<<0); // enable GPIOA peri
+
+	// configure the mode of GPIOA pin 8 as AF function mode
+	uint32_t *pGPIOModereg = (uint32_t *)(GPIOA_BASE_ADDR);
+	*pGPIOModereg &= (0x3 << 16);
+	*pGPIOModereg |= (0x3 << 16);
+
+	// configure the AF function register to set mode 0 for PA8
+	uint32_t *pGPIOAAFreg = (uint32_t *)(GPIOA_BASE_ADDR + 0x24);
+	*pGPIOAAFreg &= ~(0xf << 0);
 }

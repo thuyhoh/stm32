@@ -356,59 +356,11 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber)
 	pGPIO->ODR ^= (1<<PinNumber);
 }
 /* IRQ Configuration and ISR handling */
-void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
 {
-	if(EnorDi == ENABLE)
-	{
-		if(IRQNumber <= 31)
-		{
-			// ISER0
-			*NVIC_ISER0 |= 1<< IRQNumber ;
-		}
-		else if(IRQNumber > 31 && IRQNumber < 64)
-		{
-			// ISER1
-			*NVIC_ISER1 |= 1<< (IRQNumber % 32);
-		}
-		else if(IRQNumber > 64 && IRQNumber < 96)
-		{
-			// ISER2
-			*NVIC_ISER2 |= 1<< (IRQNumber % 64);
-		}
-	}else
-	{
-		if(IRQNumber <= 31)
-		{
-			// ICER0
-			*NVIC_ICER0 |= 1<< IRQNumber ;
-		}
-		else if(IRQNumber > 31 && IRQNumber < 64)
-		{
-			// ICER1
-			*NVIC_ICER1 |= 1<< (IRQNumber % 32);
-		}
-		else if(IRQNumber > 64 && IRQNumber < 96)
-		{
-			// ICER2
-			*NVIC_ICER2 |= 1<< (IRQNumber % 64);
-		}
-	}
+	NVIC_IRQConfig(IRQNumber, EnorDi);
+	NVIC_IRQPriorityConfig(IRQNumber, IRQPriority);
 }
-
-void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
-{
-	// find position of the IRQPriority 
-	uint8_t iprx = IRQNumber / 4;
-	uint8_t iprx_Section = IRQNumber % 4;
-	
-	// Clear NVIC_IPR
-	*(NVIC_IPR_BASE+iprx) &=  (uint32_t)~(0xff << (iprx_Section*8));
-	
-	// Set Priority of IRQNumber
-	uint8_t shift_amount = (iprx_Section*8) + (8 - NO_PR_BITS_IMPLEMENTED);
-	*(NVIC_IPR_BASE + iprx) |=  (uint32_t)(IRQPriority << shift_amount );
-}
-
 void GPIO_IRQHandling(uint8_t PinNumber)
 {
 	// clear the PR flag in EXTI->PR

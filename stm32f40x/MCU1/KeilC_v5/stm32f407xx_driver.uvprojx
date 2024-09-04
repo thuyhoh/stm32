@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Drivers\stm32f407vg_drivers\Inc</IncludePath>
+              <IncludePath>..\..\Drivers\stm32f407vg_drivers\Inc;..\..\..\CortexMx\Drivers\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -400,9 +400,24 @@
           <GroupName>Inc</GroupName>
           <Files>
             <File>
-              <FileName>CortexM4.h</FileName>
+              <FileName>CortexMx.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h</FilePath>
+              <FilePath>..\..\..\CortexMx\Drivers\Inc\CortexMx.h</FilePath>
+            </File>
+            <File>
+              <FileName>CortexMx_BitBand.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h</FilePath>
+            </File>
+            <File>
+              <FileName>CortexMx_NVIC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h</FilePath>
+            </File>
+            <File>
+              <FileName>CortexMx_SysTick_Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h</FilePath>
             </File>
             <File>
               <FileName>stm32f407xx.h</FileName>
@@ -429,15 +444,30 @@
               <FileType>5</FileType>
               <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_uart_driver.h</FilePath>
             </File>
+            <File>
+              <FileName>stm32f407xx_rcc_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
           <Files>
             <File>
-              <FileName>CortexM4.c</FileName>
+              <FileName>CortexMx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\Drivers\stm32f407vg_drivers\Src\CortexM4.c</FilePath>
+              <FilePath>..\..\..\CortexMx\Drivers\Src\CortexMx.c</FilePath>
+            </File>
+            <File>
+              <FileName>CortexMx_NVIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\CortexMx\Drivers\Src\CortexMx_NVIC.c</FilePath>
+            </File>
+            <File>
+              <FileName>CortexMx_SysTick_Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\CortexMx\Drivers\Src\CortexMx_SysTick_Timer.c</FilePath>
             </File>
             <File>
               <FileName>stm32f407xx_gpio_driver.c</FileName>
@@ -468,6 +498,11 @@
               <FileName>002spi_tx_Testing.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\002spi_tx_Testing.c</FilePath>
+            </File>
+            <File>
+              <FileName>001_HSE_HSI_Configure.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Example\001_HSE_HSI_Configure.c</FilePath>
             </File>
           </Files>
         </Group>

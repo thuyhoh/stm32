@@ -1,10 +1,30 @@
-10:03:36 **** Incremental Build of configuration Debug for project stm32f407xx_driver ****
+21:10:23 **** Clean-only build of configuration Debug for project 001_HSI_HSE_configure ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f401vctx.d ./Startup/startup_stm32f401vctx.o
+rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf 001_HSI_configure.elf 001_HSI_configure.list 001_HSI_configure.map default.size.stdout
+ 
+21:10:23 **** Build of configuration Debug for project 001_HSI_HSE_configure ****
 make -j12 all 
-arm-none-eabi-gcc -o "stm32f407xx_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\my_workspace\stm32f407xx_driver\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/main.o: in function `main':
-E:/2.Embedded/microtroller/STM32fx/stm32f40x/MCU1/my_workspace/stm32f407xx_driver/Debug/../Src/main.c:41: undefined reference to `GPIO_PeriClockControl'
-C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: E:/2.Embedded/microtroller/STM32fx/stm32f40x/MCU1/my_workspace/stm32f407xx_driver/Debug/../Src/main.c:42: undefined reference to `GPIO_Init'
-C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: E:/2.Embedded/microtroller/STM32fx/stm32f40x/MCU1/my_workspace/stm32f407xx_driver/Debug/../Src/main.c:48: undefined reference to `GPIO_ToggleOutputPin'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:63: stm32f407xx_driver.elf] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f401vctx.d" -MT"Startup/startup_stm32f401vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401vctx.o" "../Startup/startup_stm32f401vctx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401C_DISCO -DSTM32F4 -DSTM32F401VCTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401C_DISCO -DSTM32F4 -DSTM32F401VCTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F401C_DISCO -DSTM32F4 -DSTM32F401VCTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "001_HSI_HSE_configure.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\my_workspace\001_HSI_HSE_configure\STM32F401VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001_HSI_HSE_configure.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001_HSI_HSE_configure.elf
+ 
+arm-none-eabi-size  001_HSI_HSE_configure.elf 
+arm-none-eabi-objdump -h -S 001_HSI_HSE_configure.elf  > "001_HSI_HSE_configure.list"
+   text	   data	    bss	    dec	    hex	filename
+    816	      0	   1568	   2384	    950	001_HSI_HSE_configure.elf
+Finished building: default.size.stdout
+ 
+Finished building: 001_HSI_HSE_configure.list
+ 
+21:10:35 **** Incremental Build of configuration Debug for project 001_HSI_HSE_configure ****
+make -j12 all 
+arm-none-eabi-size  001_HSI_HSE_configure.elf 
+   text	   data	    bss	    dec	    hex	filename
+    816	      0	   1568	   2384	    950	001_HSI_HSE_configure.elf
+Finished building: default.size.stdout
+ 

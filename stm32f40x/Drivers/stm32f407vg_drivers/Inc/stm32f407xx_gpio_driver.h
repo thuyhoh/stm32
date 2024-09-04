@@ -8,7 +8,7 @@
 #define __STM32F407XX_GPIO_DRIVER_H_
 
 #include "stm32f407xx.h"
-
+#include "stm32f407xx_rcc_driver.h"
 /*
  * 
  */
@@ -98,7 +98,38 @@ typedef struct
 #define GPIO_AF_AF14		14
 #define GPIO_AF_AF15		15
 
+/*
+ * BIT POSITION OF RCC
+ */
+// RCC_AHB1ENR
+#define RCC_AHB1ENR_GPIOAENR				0
+#define RCC_AHB1ENR_GPIOBENR				1
+#define RCC_AHB1ENR_GPIOCENR				2
+#define RCC_AHB1ENR_GPIODENR				3
+#define RCC_AHB1ENR_GPIOEENR				4
+#define RCC_AHB1ENR_GPIOFENR				5
+#define RCC_AHB1ENR_GPIOGENR				6
+#define RCC_AHB1ENR_GPIOHENR				7
+#define RCC_AHB1ENR_GPIOIENR				8
 
+// RCC_APB2ENR
+#define RCC_APB2ENR_SYSCFGENR			14
+
+// RCC_AHB1RSTR
+#define RCC_AHB1RSTR_GPIOARST				0
+#define RCC_AHB1RSTR_GPIOBRST				1
+#define RCC_AHB1RSTR_GPIOCRST				2
+#define RCC_AHB1RSTR_GPIODRST				3
+#define RCC_AHB1RSTR_GPIOERST				4
+#define RCC_AHB1RSTR_GPIOFRST				5
+#define RCC_AHB1RSTR_GPIOGRST				6
+#define RCC_AHB1RSTR_GPIOHRST				7
+#define RCC_AHB1RSTR_GPIOIRST				8
+
+// RCC_APB2RSTR
+#define RCC_APB1RSTR_ENRSYSCFG				14
+
+/**/
 #define GPIO_BASEADDR_TO_CODE(x)			( (x == GPIOA_BASE) ?0:\
 																				(x == GPIOB_BASE) ?1:\
 																				(x == GPIOC_BASE) ?2:\
@@ -109,11 +140,61 @@ typedef struct
 																				(x == GPIOH_BASE) ?7:\
 																				(x == GPIOI_BASE) ?8:9 )
 
+
 /****************************************************************************
 
 
 
 ******************************************************************************/
+
+/*
+ * Clock and Reset Control of GPIO
+ */
+
+/* Enable Clock for GPIOx */
+#define GPIOA_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOAENR)
+#define GPIOB_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOBENR)
+#define GPIOC_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOCENR)
+#define GPIOD_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIODENR)
+#define GPIOE_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOEENR)
+#define GPIOF_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOFENR)
+#define GPIOG_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOGENR)
+#define GPIOH_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOHENR)
+#define GPIOI_PCLK_EN() 			RCC_BASE->AHB1ENR |= (1 << RCC_AHB1ENR_GPIOIENR)
+
+/* Enable Clock for SYSCFG*/
+#define SYSCFG_PCLK_EN()			RCC_BASE->APB2ENR |= (1 << RCC_APB2ENR_SYSCFGENR)
+
+/* Disable Clock for GPIOx */
+#define GPIOA_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOAENR)
+#define GPIOB_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOBENR)
+#define GPIOC_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOCENR)
+#define GPIOD_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIODENR)
+#define GPIOE_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOEENR)
+#define GPIOF_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOFENR)
+#define GPIOG_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOGENR)
+#define GPIOH_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOHENR)
+#define GPIOI_PCLK_DIS() 			RCC_BASE->AHB1ENR &= (uint32_t)~(1 << RCC_AHB1ENR_GPIOIENR)
+
+/* Disable Clock for SYSCFG*/
+#define SYSCFG_PCLK_DIS()			RCC_BASE->APB2ENR &= (uint32_t)~(1 << RCC_APB2ENR_SYSCFGENR)
+
+/*
+ * Macro to reset GPIOx peripheral
+ */
+#define GPIOA_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOARST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOARST);}while(0)
+#define GPIOB_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOBRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOBRST);}while(0)
+#define GPIOC_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOCRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOCRST);}while(0)
+#define GPIOD_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIODRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIODRST);}while(0)
+#define GPIOE_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOERST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOERST);}while(0)
+#define GPIOF_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOFRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOFRST);}while(0)
+#define GPIOG_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOGRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOGRST);}while(0)
+#define GPIOH_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOHRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOHRST);}while(0)
+#define GPIOI_REG_RESET()			do{RCC_BASE->AHB1RSTR |= (1<<RCC_AHB1RSTR_GPIOIRST); RCC_BASE->AHB1RSTR &= (uint32_t)~(1<<RCC_AHB1RSTR_GPIOIRST);}while(0)
+
+/* Disable Clock for SYSCFG*/
+#define SYSCFG_REG_RESET()		do{RCC_BASE->APB2RSTR |= (1<<RCC_APB2RSTR_SYSCFG); RCC_BASE->APB2RSTR &= (uint32_t)~(1<<RCC_APB2RSTR_SYSCFG);}while(0)
+
 
 /* GPIO Peripheral Clock setup */
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIO, uint8_t ENorDI);
@@ -130,8 +211,13 @@ void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIO, uint8_t Value);
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 
 /* IRQ Configuration and ISR handling */
-void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
-void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
 void GPIO_IRQHandling(uint8_t PinNumber);
+
+/*
+ * Other Configure function
+ */
+void GPIO_DigitalOutputConfig(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
+void GPIO_DigitalInputConfig(GPIO_RegDef_t *pGPIO, uint8_t PinNumber);
 
 #endif /* __STM32F407XX_GPIO_DRIVER_H_ */

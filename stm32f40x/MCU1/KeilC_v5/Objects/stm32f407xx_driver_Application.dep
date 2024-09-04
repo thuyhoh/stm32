@@ -1,55 +1,90 @@
 Dependencies for Project 'stm32f407xx_driver', Target 'Application': (DO NOT MODIFY !)
 CompilerVersion: 6210000::V6.21::ARMCLANG
-F (.\main.c)(0x66D3D6D9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/main.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407vg.h)(0x66D27A36)
+F (.\main.c)(0x66D86903)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/main.o -MD)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569BE22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)
-I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x6569BE22)
-F (.\main.h)(0x66D327F4)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_i2c_driver.h)(0x66D32818)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_uart_driver.h)(0x66D32820)()
-F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)()
-F (..\..\Drivers\stm32f407vg_drivers\Src\CortexM4.c)(0x66CDA1E8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/cortexm4.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h)(0x66D69D26)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D7C5BF)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D6A3FC)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_i2c_driver.h)(0x66D69A90)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_uart_driver.h)(0x66D724B2)
+F (.\main.h)(0x66D69BA9)()
+F (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)()
+F (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)()
+F (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)()
+F (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D7C5BF)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_i2c_driver.h)(0x66D69A90)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D6A3FC)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_uart_driver.h)(0x66D724B2)()
+F (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h)(0x66D69D26)()
+F (..\..\..\CortexMx\Drivers\Src\CortexMx.c)(0x66D08EF5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/cortexmx.o -MD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_gpio_driver.c)(0x66D27DA8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_gpio_driver.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)
+F (..\..\..\CortexMx\Drivers\Src\CortexMx_NVIC.c)(0x66CEB63F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/cortexmx_nvic.o -MD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
+F (..\..\..\CortexMx\Drivers\Src\CortexMx_SysTick_Timer.c)(0x66D56710)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/cortexmx_systick_timer.o -MD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_gpio_driver.c)(0x66D57018)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_gpio_driver.o -MD)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D7C5BF)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569BE22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)
-F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_i2c_driver.c)(0x66CDA1AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_i2c_driver.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h)(0x66D69D26)
+F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_i2c_driver.c)(0x66CDA1AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_i2c_driver.o -MD)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D6A3FC)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569BE22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)
-F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_spi_driver.c)(0x66D32A2C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_spi_driver.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D7C5BF)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h)(0x66D69D26)
+F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_spi_driver.c)(0x66D5B6C4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_spi_driver.o -MD)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D6A3FC)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569BE22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)
-F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_uart_driver.c)(0x66CDA1AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_uart_driver.o -MD)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_spi_driver.h)(0x66D327E9)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D327DA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D7C5BF)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_rcc_driver.h)(0x66D69D26)
+F (..\..\Drivers\stm32f407vg_drivers\Src\stm32f407xx_uart_driver.c)(0x66D7287C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/stm32f407xx_uart_driver.o -MD)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_uart_driver.h)(0x66D724B2)
+I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx.h)(0x66D6BE2E)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x6569BE22)
 I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569BE22)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\CortexM4.h)(0x66CDD20A)
-I (..\..\Drivers\stm32f407vg_drivers\Inc\stm32f407xx_gpio_driver.h)(0x66D327F8)
-F (.\002spi_tx_Testing.c)(0x66D3266F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/002spi_tx_testing.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569BE22)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx.h)(0x66D5B6C2)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_BitBand.h)(0x66CEB5BD)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_NVIC.h)(0x66CEB700)
+I (..\..\..\CortexMx\Drivers\Inc\CortexMx_SysTick_Timer.h)(0x66CEB7BE)
+F (.\002spi_tx_Testing.c)(0x66D86659)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/002spi_tx_testing.o -MD)
+F (.\Example\001_HSE_HSI_Configure.c)(0x66D866D4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/001_hse_hsi_configure.o -MD)
 F (RTE/Device/STM32F407VGTx/startup_stm32f407xx.s)(0x6664E85E)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 539" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F407xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f407xx.o)
-F (RTE/Device/STM32F407VGTx/system_stm32f4xx.c)(0x6664E85E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/system_stm32f4xx.o -MD)
+F (RTE/Device/STM32F407VGTx/system_stm32f4xx.c)(0x6664E85E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../../Drivers/stm32f407vg_drivers/Inc -I ../../../CortexMx/Drivers/Inc-I./RTE/_Application-IC:/Users/ASUS/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ASUS/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F407xx -D_RTE_-o ./objects/system_stm32f4xx.o -MD)
 I (C:\Users\ASUS\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x6664E85E)
 I (C:\Users\ASUS\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x6664E85E)
 I (C:\Users\ASUS\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F58EE)

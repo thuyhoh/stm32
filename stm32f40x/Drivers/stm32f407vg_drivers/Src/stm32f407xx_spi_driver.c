@@ -296,12 +296,91 @@ void SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pTxBuffer, uint32_t le
 }
 
 /* IRQ Configuration and ISR handling */
-void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
-{}
-void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
-{}
-void SPI_IRQHandling(SPI_RegDef_t *pSPIx)
-{}
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
+{
+	NVIC_IRQConfig(IRQNumber, EnorDi);
+	NVIC_IRQPriorityConfig(IRQNumber, IRQPriority);
+}
+
+void SPI_IRQHandling(SPI_Handle_t *pSPIHandle)
+{
+	uint32_t tmp1, tmp2;
+	// 1. check for TXE 
+	tmp1 = pSPIHandle->pSPIx->SR & (1 << SPI_SR_TXE);
+	tmp2 = pSPIHandle->pSPIx->SR & (1 << SPI_CR2_TXEIE);
+	if(tmp1 && tmp2)
+	{
+		// Handle TXE
+		spi_txe_interrupt_handle(pSPIHandle);
+	}
+	// 1. check for TXE 
+	tmp1 = pSPIHandle->pSPIx->SR & (1 << SPI_SR_RXNE);
+	tmp2 = pSPIHandle->pSPIx->SR & (1 << SPI_CR2_RXEIE);
+	if(tmp1 && tmp2)
+	{
+		// Handle TXE
+		spi_rxe_interrupt_handle(pSPIHandle);
+	}
+	// 1. check for OVR 
+	tmp1 = pSPIHandle->pSPIx->SR & (1 << SPI_SR_OVR);
+	tmp2 = pSPIHandle->pSPIx->SR & (1 << SPI_CR2_ERRIE);
+	if(tmp1 && tmp2)
+	{
+		// Handle OVR
+		spi_ovr_interrupt_handle(pSPIHandle);
+	}
+}
+
+static void spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle)
+{
+	if(pSPIHandle->pSPIx->CR1 & (1 << SPI_CR1_DFF))
+	{  // 16 bit DFF
+		pSPIHandle->pSPIx->DR = *((uint16_t *)pSPIHandle->pTxBuffer);
+		pSPIHandle->Txlen = pSPIHandle->Txlen - 2;
+		(uint16_t *)pSPIHandle->pTxBuffer++;
+	}else
+	{  // 8 bit DFF
+		pSPIHandle->pSPIx->DR = *(pSPIHandle->pTxBuffer);
+		pSPIHandle->Txlen = pSPIHandle->Txlen - 1;
+		pSPIHandle->pTxBuffer++;
+	}
+	if(pSPIHandle->Txlen)
+	{// Txlen is zero -> close the spi transmition and inform the application
+		SPI_CloseTransmisson(pSPIHandle);
+		SPI_ApplicationEventCallback(pSPIHandle, SPI_EVENT_TX_CMPLT);	
+		
+	}
+}
+static void spi_rxe_interrupt_handle(SPI_Handle_t *pSPIHandle)
+{
+	if(pSPIHandle->pSPIx->CR1 & (1 << SPI_CR1_DFF))
+	{  // 16 bit DFF
+		*((uint16_t *)pSPIHandle->pRxBuffer) = pSPIHandle->pSPIx->DR;
+		pSPIHandle->Txlen = pSPIHandle->Txlen - 2;
+		(uint16_t *)pSPIHandle->pRxBuffer++;
+	}else
+	{  // 8 bit DFF
+		*(pSPIHandle->pRxBuffer) = pSPIHandle->pSPIx->DR;
+		pSPIHandle->Txlen = pSPIHandle->Txlen - 1;
+		pSPIHandle->pRxBuffer++;
+	}
+	if(pSPIHandle->Txlen)
+	{// Txlen is zero -> close the spi transmition and inform the application
+		SPI_CloseReceiption(pSPIHandle);
+		SPI_ApplicationEventCallback(pSPIHandle, SPI_EVENT_RX_CMPLT);	
+		
+	}
+}
+
+
+static void spi_ovr_interrupt_handle(SPI_Handle_t *pSPIHandle)
+{
+	if(pSPIHandle->TxState != SPI_BUSY_IN_TX)
+	{
+		SPI_ClearOVRFlag(pSPIHandle->pSPIx);
+	}
+	SPI_ApplicationEventCallback(pSPIHandle, SPI_EVENT_OVR_ERR); 
+}
 
 /*
  * Other Peripheral Control APIs
@@ -330,4 +409,30 @@ void SPI_Stop(SPI_RegDef_t *pSPIx)
 void SPI_SSIConfig(SPI_RegDef_t *pSPIx)
 {
 	pSPIx->CR1 |= (1<<8);
+}
+
+void SPI_ClearOVRFlag(SPI_RegDef_t *pSPIx)
+{
+	uint32_t temp;
+	temp = pSPIx->DR;
+	temp = pSPIx->SR;
+}
+void SPI_CloseTransmisson(SPI_Handle_t *pSPIHandle)
+{
+	pSPIHandle->pSPIx->CR2 &= (uint32_t)~(1<<SPI_CR2_TXEIE);
+	pSPIHandle->pTxBuffer = NULL;
+	pSPIHandle->Txlen = 0;
+	pSPIHandle->TxState = SPI_READY;
+}
+void SPI_CloseReceiption(SPI_Handle_t *pSPIHandle)
+{
+	pSPIHandle->pSPIx->CR2 &= (uint32_t)~(1<<SPI_CR2_RXEIE);
+	pSPIHandle->pRxBuffer = NULL;
+	pSPIHandle->Txlen = 0;
+	pSPIHandle->TxState = SPI_READY;
+}
+
+_weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle, uint8_t AppEv)
+{
+	// 
 }

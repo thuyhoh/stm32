@@ -8,6 +8,7 @@
 #define __STM32F407XX_SPI_DRIVER_H_
 
 #include "stm32f407xx.h"
+#include "stm32f407xx_gpio_driver.h"
 
 typedef struct
 {
@@ -69,12 +70,21 @@ typedef struct
 #define SPI_SSM_DI		0
 
 /* BIT POSITION */
+	// SPI_CR1
 #define SPI_CR1_DFF		11
 #define SPI_CR1_SPE		6
+
+	// SPI_CR2
 #define SPI_CR2_TXEIE 7
+#define SPI_CR2_RXEIE 6
+#define SPI_CR2_ERRIE 5
+#define SPI_CR2_FRF		4
+
+	// SPI_SR
+#define SPI_SR_BUSY		7
+#define SPI_SR_OVR    6
 #define SPI_SR_TXE		1
 #define SPI_SR_RXNE		0
-#define SPI_SR_BUSY		7
 /* FLAG NAME */
 #define SPI_TXE_FLAG		( 1 << SPI_SR_TXE  )
 #define SPI_RXNE_FLAG		( 1 << SPI_SR_RXNE  )
@@ -83,15 +93,52 @@ typedef struct
 #define SPI_PERI_ENABLE		ENABLE	
 #define SPI_PERI_DISABLE	DISABLE
 
-/**/
+/* SPI Application states */
 #define SPI_READY					0
 #define SPI_BUSY_IN_TX		1
 #define SPI_BUSY_IN_RX		2
+
+/* SPI Application events */
+#define SPI_EVENT_TX_CMPLT		1
+#define SPI_EVENT_RX_CMPLT		2
+#define SPI_EVENT_OVR_ERR			3
+
+/*
+ * BIT POSITION OF RCC
+ */
+// RCC_APB1ENR 
+#define RCC_APB1ENR_SPI2ENR			14
+#define RCC_APB1ENR_SPI3ENR			15
+// RCC_APB1RSTR
+#define RCC_APB1RSTR_SPI2RST			14
+#define RCC_APB1RSTR_SPI3RST			15
+// RCC_APB2ENR
+#define RCC_APB2ENR_SPI1ENR			12
+//#define RCC_APB2ENR_SPI4ENR		13
+// RCC_APB2RSTR
+#define RCC_APB2RSTR_SPI1RST			12
+//#define RCC_APB2RSTR_SPI4RST		13
 /****************************************************************************
 
-
+					APIs
 
 ******************************************************************************/
+/*
+ * Clock and Reset Control of GPIO
+ */
+/* Enable Clock for SPIx */
+#define SPI1_PCLK_EN()					RCC_BASE->APB2ENR |= (1 << RCC_APB2ENR_SPI1ENR)
+#define SPI2_PCLK_EN()					RCC_BASE->APB1ENR |= (1 << RCC_APB1ENR_SPI2ENR)
+#define SPI3_PCLK_EN()					RCC_BASE->APB1ENR |= (1 << RCC_APB1ENR_SPI3ENR)
+//#define SPI4_PCLK_EN()					RCC_BASE->APB2ENR |= (1 << 13)
+
+/* Disable Clock for SPIx */
+#define SPI1_PCLK_DIS()				RCC_BASE->APB2ENR &= (uint32_t)~(1 << RCC_APB2ENR_SPI1ENR)
+#define SPI2_PCLK_DIS()				RCC_BASE->APB1ENR &= (uint32_t)~(1 << RCC_APB1ENR_SPI2ENR)
+#define SPI3_PCLK_DIS()				RCC_BASE->APB1ENR &= (uint32_t)~(1 << RCC_APB1ENR_SPI3ENR)
+//#define SPI4_PCLK_DIS()				RCC_BASE->APB2ENR &= (uint32_t)~(1 << 13)
+
+/* Reset Register for SPIx */
 
 /* Peripheral Clock setup */
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t ENorDI);
@@ -109,9 +156,8 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t len);
 void SPI_ReceiveDataIT(SPI_Handle_t *pSPIHandle, uint8_t *pTxBuffer, uint32_t len);
 
 /* IRQ Configuration and ISR handling */
-void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
-void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
-void SPI_IRQHandling(SPI_RegDef_t *pSPIx);
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
+void SPI_IRQHandling(SPI_Handle_t *pSPIHandle);
 
 /*
  * Other Peripheral Control APIs
@@ -121,4 +167,17 @@ void SPI_Start(SPI_RegDef_t *pSPIx);
 void SPI_Stop(SPI_RegDef_t *pSPIx);
 void SPI_SSIConfig(SPI_RegDef_t *pSPIx);
 
+void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle, uint8_t AppEv);
+
+void SPI_ClearOVRFlag(SPI_RegDef_t *pSPIx);
+void SPI_CloseTransmisson(SPI_Handle_t *pSPIHandle);
+void SPI_CloseReceiption(SPI_Handle_t *pSPIHandle);
+
+/*
+ * Static Function
+*/
+
+static void spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle);
+static void spi_rxe_interrupt_handle(SPI_Handle_t *pSPIHandle);
+static void spi_ovr_interrupt_handle(SPI_Handle_t *pSPIHandle);
 #endif /* __STM32F407XX_SPI_DRIVER_H_ */
