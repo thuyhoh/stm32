@@ -22,235 +22,25 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\2.Embedded\microtroller\STM32fx\stm32f40x\MCU1\KeilC_v5\stm32f407xx_driver.uvprojx
-Project File Date:  09/04/2024
+Project File Date:  09/05/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
-Rebuild target 'Application'
-Example/001_HSE_HSI_Configure.c(92): warning: no newline at end of file [-Wnewline-eof]
-   92 | //}
-      |    ^
-Example/001_HSE_HSI_Configure.c(92): warning: ISO C requires a translation unit to contain at least one declaration [-Wempty-translation-unit]
-2 warnings generated.
-compiling 001_HSE_HSI_Configure.c...
-002spi_tx_Testing.c(27): warning: ISO C requires a translation unit to contain at least one declaration [-Wempty-translation-unit]
-   27 | //}
-      |    ^
-1 warning generated.
-compiling 002spi_tx_Testing.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(11): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407xx_gpio_driver.h(25): warning: padding size of 'GPIO_Handle_t' with 2 bytes to alignment boundary [-Wpadded]
-   25 | typedef struct
-      |         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(170): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  170 |         uint32_t tempreg = 0;
-      |                  ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(28): warning: padding struct 'SPI_Handle_t' with 1 byte to align 'pTxBuffer' [-Wpadded]
-   28 |         uint8_t  *pTxBuffer;
-      |                   ^
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(24): warning: padding size of 'SPI_Handle_t' with 2 bytes to alignment boundary [-Wpadded]
-   24 | typedef struct
-      |         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(204): warning: unused parameter 'pSPIx' [-Wunused-parameter]
-  204 | void SPI_DeInit(SPI_RegDef_t *pSPIx)
-      |                               ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(229): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  229 |                         pSPIx->DR = *((uint16_t *)pTxBuffer);
-      |                                       ^~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(231): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  231 |                         (uint16_t *)pTxBuffer++;
-      |                         ^~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(231): warning: expression result unused [-Wunused-value]
-  231 |                         (uint16_t *)pTxBuffer++;
-      |                         ^           ~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(270): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  270 |                         *((uint16_t *)pRxBuffer) = pSPIx->DR;
-      |                           ^~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(270): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  270 |                         *((uint16_t *)pRxBuffer) = pSPIx->DR;
-      |                                                  ~ ~~~~~~~^~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(272): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  272 |                         (uint16_t *)pRxBuffer++;
-      |                         ^~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(275): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  275 |                         *(pRxBuffer) = pSPIx->DR;
-      |                                      ~ ~~~~~~~^~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(272): warning: expression result unused [-Wunused-value]
-  272 |                         (uint16_t *)pRxBuffer++;
-      |                         ^           ~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(338): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  338 |                 pSPIHandle->pSPIx->DR = *((uint16_t *)pSPIHandle->pTxBuffer);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(340): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  340 |                 (uint16_t *)pSPIHandle->pTxBuffer++;
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(340): warning: expression result unused [-Wunused-value]
-  340 |                 (uint16_t *)pSPIHandle->pTxBuffer++;
-      |                 ^           ~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(358): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  358 |                 *((uint16_t *)pSPIHandle->pRxBuffer) = pSPIHandle->pSPIx->DR;
-      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(358): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
-  358 |                 *((uint16_t *)pSPIHandle->pRxBuffer) = pSPIHandle->pSPIx->DR;
-      |                                                      ~ ~~~~~~~~~~~~~~~~~~~^~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(360): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
-  360 |                 (uint16_t *)pSPIHandle->pRxBuffer++;
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(363): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
-  363 |                 *(pSPIHandle->pRxBuffer) = pSPIHandle->pSPIx->DR;
-      |                                          ~ ~~~~~~~~~~~~~~~~~~~^~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(360): warning: expression result unused [-Wunused-value]
-  360 |                 (uint16_t *)pSPIHandle->pRxBuffer++;
-      |                 ^           ~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(416): warning: variable 'temp' set but not used [-Wunused-but-set-variable]
-  416 |         uint32_t temp;
-      |                  ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(435): warning: unused parameter 'pSPIHandle' [-Wunused-parameter]
-  435 | _weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle, uint8_t AppEv)
-      |                                                       ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(435): warning: unused parameter 'AppEv' [-Wunused-parameter]
-  435 | _weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle, uint8_t AppEv)
-      |                                                                           ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(66): warning: unused function 'SPI_PinConfig' [-Wunused-function]
-   66 | static void SPI_PinConfig(SPI_RegDef_t *pSPIx, uint8_t SPI_DeviceMode)
-      |             ^~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(231): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  231 |                         (uint16_t *)pTxBuffer++;
-      |                                     ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(236): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  236 |                         pTxBuffer++;
-      |                         ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(272): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  272 |                         (uint16_t *)pRxBuffer++;
-      |                                     ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(277): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  277 |                         pRxBuffer++;
-      |                         ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(340): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  340 |                 (uint16_t *)pSPIHandle->pTxBuffer++;
-      |                             ~~~~~~~~~~~~^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(345): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  345 |                 pSPIHandle->pTxBuffer++;
-      |                 ~~~~~~~~~~~~^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(360): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  360 |                 (uint16_t *)pSPIHandle->pRxBuffer++;
-      |                             ~~~~~~~~~~~~^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_spi_driver.c(365): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  365 |                 pSPIHandle->pRxBuffer++;
-      |                 ~~~~~~~~~~~~^~~~~~~~~
-33 warnings generated.
-compiling stm32f407xx_spi_driver.c...
-../../../CortexMx/Drivers/Src/CortexMx.c(3): warning: no previous prototype for function 'Switch_SpToPSP' [-Wmissing-prototypes]
-    3 | __attribute__((noreturn))void Switch_SpToPSP(void)
-      |                               ^
-../../../CortexMx/Drivers/Src/CortexMx.c(3): note: declare 'static' if the function is not intended to be used outside of this translation unit
-    3 | __attribute__((noreturn))void Switch_SpToPSP(void)
-      |                          ^
-      |                          static 
-../../../CortexMx/Drivers/Src/CortexMx.c(6): warning: function declared 'noreturn' should not return [-Winvalid-noreturn]
-    6 | }
-      | ^
-2 warnings generated.
-compiling CortexMx.c...
-../../../CortexMx/Drivers/Src/CortexMx_SysTick_Timer.c(6): warning: In file included from...
-../../../CortexMx/Drivers/Inc\CortexMx_SysTick_Timer.h(19): warning: padding struct 'SysTick_Config_t' with 2 bytes to align 'STK_CountValue' [-Wpadded]
-   19 |         uint32_t STK_CountValue;
-      |                  ^
-1 warning generated.
-compiling CortexMx_SysTick_Timer.c...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_i2c_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(180): warning: unused function 'spi_txe_interrupt_handle' [-Wunused-function]
-  180 | static void spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(181): warning: unused function 'spi_rxe_interrupt_handle' [-Wunused-function]
-  181 | static void spi_rxe_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(182): warning: unused function 'spi_ovr_interrupt_handle' [-Wunused-function]
-  182 | static void spi_ovr_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-3 warnings generated.
-compiling stm32f407xx_i2c_driver.c...
-main.c(1): warning: In file included from...
-./main.h(13): warning: no newline at end of file [-Wnewline-eof]
-   13 | #endif
-      |       ^
-main.c(1): warning: In file included from...
-./main.h(8): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_gpio_driver.h(25): warning: padding size of 'GPIO_Handle_t' with 2 bytes to alignment boundary [-Wpadded]
-   25 | typedef struct
-      |         ^
-main.c(46): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-   46 |         *pRCCCFGRreg &= ~(0x3<<21);
-      |                      ~~ ^~~~~~~~~~
-main.c(64): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-   64 |         *pRCCCFGRreg &= ~(0x3<<21);
-      |                      ~~ ^~~~~~~~~~
-main.c(83): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
-   83 |         *pGPIOAAFreg &= ~(0xf << 0);
-      |                      ~~ ^~~~~~~~~~~
-main.c(84): warning: no newline at end of file [-Wnewline-eof]
-   84 | }
-      |  ^
-main.c(77): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-   77 |         uint32_t *pGPIOModereg = (uint32_t *)(GPIOA_BASE_ADDR);
-      |                   ^
-main.c(1): warning: In file included from...
-./main.h(9): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(180): warning: unused function 'spi_txe_interrupt_handle' [-Wunused-function]
-  180 | static void spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(181): warning: unused function 'spi_rxe_interrupt_handle' [-Wunused-function]
-  181 | static void spi_rxe_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_spi_driver.h(182): warning: unused function 'spi_ovr_interrupt_handle' [-Wunused-function]
-  182 | static void spi_ovr_interrupt_handle(SPI_Handle_t *pSPIHandle);
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~
-10 warnings generated.
-compiling main.c...
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(28): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-   28 |         uint8_t shift_amount = (IPR_section*8) + (8 - NO_PR_BITS_IMPLEMENTED);
-      |                 ^
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(11): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   11 |                 *(NVIC_ISER_BASE + IRQ_offset) |= (1<<IRQ_index);
-      |                   ^~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Inc/CortexMx.h(46): note: expanded from macro 'NVIC_ISER_BASE'
-   46 | #define NVIC_ISER_BASE                                                                                                                                  ((_vo uint32_t *)0xE000E100U)
-      |                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(14): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   14 |                 *(NVIC_ICER_BASE + IRQ_offset) |= (1<<IRQ_index);
-      |                   ^~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Inc/CortexMx.h(48): note: expanded from macro 'NVIC_ICER_BASE'
-   48 | #define NVIC_ICER_BASE                                                                                                                                  ((_vo uint32_t *)0xE000E180U)
-      |                                                                                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(25): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   25 |         *(NVIC_IPR_BASE + IPR_offset) &=  (uint32_t)~(0xff << (IPR_section*8));
-      |           ^~~~~~~~~~~~~
-../../../CortexMx/Drivers/Inc/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
-   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
-      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(29): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   29 |         *(NVIC_IPR_BASE + IPR_offset) |=  (uint32_t)(IRQPriority << shift_amount );
-      |           ^~~~~~~~~~~~~
-../../../CortexMx/Drivers/Inc/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
-   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
-      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../CortexMx/Drivers/Src/CortexMx_NVIC.c(40): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-   40 |         uint32_t RegVal = (*(NVIC_IPR_BASE + IPR_offset) & 0xffffffff)>>(shift_amount);
-      |                              ^~~~~~~~~~~~~
-../../../CortexMx/Drivers/Inc/CortexMx.h(56): note: expanded from macro 'NVIC_IPR_BASE'
-   56 | #define NVIC_IPR_BASE                                                                                                                                           ((_vo uint32_t *)0xE000E400U)   
-      |                                                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-6 warnings generated.
-compiling CortexMx_NVIC.c...
+Build target 'Application'
+compiling stm32f407xx_rcc_driver.c...
 ../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(66): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
    66 |         uint32_t temp = 0;
       |                  ^
 ../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(7): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_uart_driver.h(15): warning: padding struct 'USART_Config_t' with 3 bytes to align 'USART_Baud' [-Wpadded]
-   15 |         uint32_t USART_Baud;                            /*@UART_BAUD*/
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_uart_driver.h(17): warning: padding struct 'USART_Config_t' with 3 bytes to align 'USART_Baud' [-Wpadded]
+   17 |         uint32_t USART_Baud;                            /*@UART_BAUD*/
       |                  ^
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_uart_driver.h(31): warning: padding struct 'USART_Handle_t' with 3 bytes to align 'pRxBuffer' [-Wpadded]
+   31 |         uint8_t* pRxBuffer;
+      |                  ^
+../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_uart_driver.h(24): warning: padding size of 'USART_Handle_t' with 3 bytes to alignment boundary [-Wpadded]
+   24 | typedef struct
+      |         ^
 ../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(140): warning: unused parameter 'pUSARTx' [-Wunused-parameter]
   140 | void USART_DeInit(USART_RegDef_t *pUSARTx)
       |                                   ^
@@ -279,89 +69,57 @@ compiling CortexMx_NVIC.c...
 ../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(242): warning: expression result unused [-Wunused-value]
   242 |                                 (uint16_t*) pRxBuffer++;
       |                                 ^           ~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(281): warning: unused parameter 'pUSARTHandle' [-Wunused-parameter]
-  281 | uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len){}
-      |                                          ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(281): warning: unused parameter 'pTxBuffer' [-Wunused-parameter]
-  281 | uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len){}
-      |                                                                ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(281): warning: unused parameter 'Len' [-Wunused-parameter]
-  281 | uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len){}
-      |                                                                                    ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(281): warning: non-void function does not return a value [-Wreturn-type]
-  281 | uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len){}
-      |                                                                                         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(282): warning: unused parameter 'pUSARTHandle' [-Wunused-parameter]
-  282 | uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len){}
-      |                                             ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(282): warning: unused parameter 'pRxBuffer' [-Wunused-parameter]
-  282 | uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len){}
-      |                                                                    ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(282): warning: unused parameter 'Len' [-Wunused-parameter]
-  282 | uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len){}
-      |                                                                                        ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(282): warning: non-void function does not return a value [-Wreturn-type]
-  282 | uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len){}
-      |                                                                                             ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(194): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  194 |                                 pTxBuffer++; // save data
-      |                                 ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(195): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  195 |                                 pTxBuffer++; // save parity bit
-      |                                 ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(201): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  201 |                                 pTxBuffer++;
-      |                                 ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(210): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  210 |                         pTxBuffer++;
-      |                         ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(241): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  241 |                                 (uint16_t*) pRxBuffer++;
-      |                                             ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(242): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  242 |                                 (uint16_t*) pRxBuffer++;
-      |                                             ^~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(250): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  250 |                                 (pRxBuffer)++;
-      |                                 ^~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(276): warning: unsafe pointer arithmetic [-Wunsafe-buffer-usage]
-  276 |                         pRxBuffer++;
-      |                         ^~~~~~~~~
-26 warnings generated.
-compiling stm32f407xx_uart_driver.c...
-assembling startup_stm32f407xx.s...
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(156): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  156 |                 uint8_t tmp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(435): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
+  435 |                                         pdata = (uint16_t*) pUSARTHandle->pTxBuffer;
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(435): warning: incompatible pointer types assigning to 'uint8_t *' (aka 'unsigned char *') from 'uint16_t *' (aka 'unsigned short *') [-Wincompatible-pointer-types]
+  435 |                                         pdata = (uint16_t*) pUSARTHandle->pTxBuffer;
+      |                                               ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(509): warning: cast from 'uint8_t *' (aka 'unsigned char *') to 'uint16_t *' (aka 'unsigned short *') increases required alignment from 1 to 2 [-Wcast-align]
+  509 |                                                 *((uint16_t*) pUSARTHandle->pRxBuffer) = (pUSARTHandle->pUSARTx->DR  & (uint16_t)0x01FF);
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(373): warning: variable 'temp3' set but not used [-Wunused-but-set-variable]
+  373 |         uint32_t temp1 , temp2, temp3;
+      |                                 ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(703): error: call to undeclared function 'RCC_GetPCLK2Value'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  703 |            PCLKx = RCC_GetPCLK2Value();
+      |                    ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(703): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  703 |            PCLKx = RCC_GetPCLK2Value();
+      |                  ~ ^~~~~~~~~~~~~~~~~~~
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(706): error: call to undeclared function 'RCC_GetPCLK1Value'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  706 |            PCLKx = RCC_GetPCLK1Value();
+      |                    ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(706): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  706 |            PCLKx = RCC_GetPCLK1Value();
+      |                  ~ ^~~~~~~~~~~~~~~~~~~
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(717): error: use of undeclared identifier 'TODO'
+  717 |            TODO
+      |            ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(721): error: use of undeclared identifier 'TODO'
+  721 |   M_part = TODO/100;
+      |            ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(727): error: use of undeclared identifier 'TODO'
+  727 |   F_part = (usartdiv - (TODO * 100));
       |                         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(123): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  123 |         uint32_t temp;
-      |                  ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(8): warning: In file included from...
-../../Drivers/stm32f407vg_drivers/Inc\stm32f407xx_gpio_driver.h(25): warning: padding size of 'GPIO_Handle_t' with 2 bytes to alignment boundary [-Wpadded]
-   25 | typedef struct
-      |         ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(160): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  160 |                 SYSCFG_BASE->EXTICR[tmp1] |= (uint32_t)PortCode<<(tmp2*4);
-      |                 ^~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Inc/stm32f407xx.h(231): note: expanded from macro 'SYSCFG_BASE'
-  231 | #define SYSCFG_BASE                             ((SYSCFG_RegDef_t *)SYSCFG_BASEADDR)
-      |                                                 ^
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(195): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  195 |                 pGPIOHandle->pGPIOx->AFR[temp1] |= (uint32_t)~(0xf<< (4*temp2));
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
-../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_gpio_driver.c(196): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  196 |                 pGPIOHandle->pGPIOx->AFR[temp1] |= (uint32_t)(pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode << (4*temp2));
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
-6 warnings generated.
-compiling stm32f407xx_gpio_driver.c...
-RTE/Device/STM32F407VGTx/system_stm32f4xx.c(263): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  263 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
-      |         ^~~~~~~~~~~~~
-1 warning generated.
-compiling system_stm32f4xx.c...
-linking...
-Program Size: Code=2016 RO-data=408 RW-data=0 ZI-data=1632  
-".\Objects\stm32f407xx_driver.axf" - 0 Error(s), 91 Warning(s).
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(733): error: use of undeclared identifier 'TODO'
+  733 |           F_part = ((( F_part * TODO)+ 50) / 100)& ((uint8_t)0x07);
+      |                                 ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(738): error: use of undeclared identifier 'TODO'
+  738 |            F_part = ((( F_part * TODO)+ 50) / 100) & ((uint8_t)0x0F);
+      |                                  ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(746): error: no member named 'TODO' in 'USART_RegDef_t'
+  746 |   pUSARTx->TODO = tempreg;
+      |   ~~~~~~~  ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(749): warning: unused parameter 'pUSARTHandle' [-Wunused-parameter]
+  749 | _weak void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv)
+      |                                                           ^
+../../Drivers/stm32f407vg_drivers/Src/stm32f407xx_uart_driver.c(749): warning: unused parameter 'AppEv' [-Wunused-parameter]
+  749 | _weak void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv)
+      |                                                                                ^
+20 warnings and 8 errors generated.
+compiling stm32f407xx_uart_driver.c...
+".\Objects\stm32f407xx_driver.axf" - 8 Error(s), 20 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -387,11 +145,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@5.6.0
 
    * Component: Keil::Device:Startup@2.6.3
-      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
-      Source file:   MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
       Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
