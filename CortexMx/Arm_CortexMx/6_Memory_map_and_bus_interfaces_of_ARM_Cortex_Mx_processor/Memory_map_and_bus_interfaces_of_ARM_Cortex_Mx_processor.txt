@@ -1,0 +1,52 @@
+Memory Map of the processor
+- Memory map explains mapping of different peripheral registers and memories in the processor addressable memory location range
+- The processor, addressable memory location range, depends upon the size of the address bus.
+- The mapping of different regions in the addressable memory location range is called 'memory map'
+- imagines: <memory_map>
+* code region:  
+	- This is the region where the MCU vendors should connect CODE memory
+	- Different type of Code memory are: Embedded flash, Rom, OTP, EEPROM, etc
+	- Processor by default fetches vector right after reset
+*SRAM region:
+	- The SRAM(Static-RAM) region is in the next 512MB of memory space after the CODE 	 region
+	- it is primarily for connecting SRAM, mostly on-chip SRAM.
+	- The first 1 MB of SRAM 
+*Peripherals Region
+	- The peripheral memory region also has the size of 512MB
+	- Used mostly for on-chip peripherals
+	- Like the SRAM region, the first 1MB of the peripheral region is bit addressable. 
+	 If the optional bit-band feature is included
+	- This is an eXecute Never (XN) region
+	- Trying to execute code from this region will trigger fault exception
+*External RAM Region
+	- This region is intended for either on-chip or off-chip memory
+	- You can execute code in this region
+	- Connecting external SDRAM
+*External Device Region
+	- This region is intended for external devices and/or share memory
+	- This is a eXecute Never (XN) region
+*Private Peripheral Bus Region
+	- This region includes the NVIC, system timer, and system control block
+	- This is a eXecute Never (XN) region
+
+Bus Protocols and Bus interfaces
+- In Cortex MX processors the bus interfaces are based on advanced microcontroller bus architecture(AMBA) specification
+- AMBA is a specification designed by ARM which governs standard for on-chip communication inside the system on chip
+- AMBA specification supports several bus protocols
+	+ AHB Lite (AMBA High-performance Bus)
+	+ APB (AMBA Peripheral Bus)
+* AHB and APB
+	- AHB lite bus is mainly used for the main bus interface
+	- APB bus is used for PPB access and some on-chip peripheral access using an 
+	 AHB-APB bridge
+	- APB bus in used for low-speed communication compared to AHB. Most of the 	 	 peripherals which don't require high operation speed are connected to this bus
+
+Bit Band and Bit Band alias addresses
+- It's the capability to address a single bit of a memory address.
+- this feature is optional. i.e., MCU manufacturer supports it or many not support this feature. Refer to reference manual 
+- Bit-banding is available for Sram and Peripheral region
+- Bit-banding provides atomic operations to bit data.
+Calculation of bit band alias address
+- Calculate the bit band alias address for given bit band memory address and bit position
+- General formula:
+	Alias_addr = alias_base + (32*(bit_band_memory_addr - bit_band_base))+ bit*4   
