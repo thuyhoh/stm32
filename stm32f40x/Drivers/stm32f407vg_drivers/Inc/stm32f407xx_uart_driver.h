@@ -4,17 +4,21 @@
  *  Author     : THUY
  */
 
-#ifndef __STM32F407XX_SPI_DRIVER_H_
-#define __STM32F407XX_SPI_DRIVER_H_
+#ifndef __STM32F407XX_UART_DRIVER_H_
+#define __STM32F407XX_UART_DRIVER_H_
 
 #include "stm32f407xx.h"
+#include "CortexMx_NVIC.h"
+#include "stm32f407xx_gpio_driver.h"
+#include "stm32f407xx_rcc_driver.h"
+
 
 typedef struct
 {
 	uint8_t USART_Mode;					/*@UART_MODE*/
 	uint32_t USART_Baud;				/*@UART_BAUD*/
 	uint8_t USART_NoOfStopBits;	/*@UART_NUMBER_OF_STOP_BITS*/
-	uint8_t USART_WordLenght;		/*@UART_WORD_LENGHT*/
+	uint8_t USART_WordLength;		/*@UART_WORD_LENGHT*/
 	uint8_t USART_ParityControl;/*@UART_PARITY_CONTROL*/
 	uint8_t USART_HWFlowControl;/*@UART_HARDWARE_FLOW_CONTROL*/
 }USART_Config_t;
@@ -23,7 +27,28 @@ typedef struct
 {
 	USART_RegDef_t *pUSARTx;
 	USART_Config_t USART_Config;
+	uint8_t* pTxBuffer;
+	uint32_t TxLen;
+	uint8_t TxBusyState;    /* UART_TX_RX_STATE */
+	uint8_t* pRxBuffer;
+	uint32_t RxLen;
+	uint8_t RxBusyState;		/* UART_TX_RX_STATE */
 }USART_Handle_t;
+
+/* UART_TX_RX_STATE */
+#define USART_READY				0
+#define USART_BUSY_IN_TX  1
+#define USART_BUSY_IN_RX  2
+
+/* SPI Application events */
+#define USART_EVENT_TX_CMPLT		1
+#define USART_EVENT_RX_CMPLT		2
+#define USART_EVENT_CTS					3
+#define USART_EVENT_IDLE				4
+#define USART_EVENT_ORE					5
+#define USART_ERREVENT_FE				6	
+#define USART_ERREVENT_NF				7
+#define USART_ERREVENT_ORE			8
 
 /*@UART_MODE*/
 #define USART_MODE_ONLY_TX 	0
@@ -137,18 +162,6 @@ typedef struct
 #define USART_CR3_CTSIE				10
 #define USART_CR3_ONEBIT			11
 
-
-/*
- * BIT POSITION OF RCC
- */
-// RCC_APB1ENR
-#define RCC_APB2ENR_USART1ENR		4
-#define RCC_APB1ENR_USART2ENR		17
-#define RCC_APB1ENR_USART3ENR		18
-#define RCC_APB1ENR_UART4ENR		19
-#define RCC_APB1ENR_UART5ENR		20
-#define RCC_APB2ENR_USART6ENR		5
-
 /* FLAG NAME */
 #define USART_CTS_FLAG		(1 << USART_SR_CTS)
 #define USART_TXE_FLAG		(1 << USART_SR_TXE)
@@ -162,27 +175,6 @@ typedef struct
  *								APIs supported by this driver
  *		 For more information about the APIs check the function definitions
  ******************************************************************************************/
-/*
- * Clock and Reset Control of GPIO
- */
-
-/* Enable Clock for USARTx */
-#define USART1_PCLK_EN()			RCC_BASE->APB2ENR |= (1<< RCC_APB2ENR_USART1ENR)	
-#define USART2_PCLK_EN()			RCC_BASE->APB1ENR |= (1<< RCC_APB1ENR_USART2ENR)
-#define USART3_PCLK_EN()			RCC_BASE->APB1ENR |= (1<< RCC_APB1ENR_USART3ENR)
-#define UART4_PCLK_EN()		    RCC_BASE->APB1ENR |= (1<< RCC_APB1ENR_UART4ENR)
-#define UART5_PCLK_EN()				RCC_BASE->APB1ENR |= (1<< RCC_APB1ENR_UART5ENR)
-#define USART6_PCLK_EN()			RCC_BASE->APB2ENR |= (1<< RCC_APB2ENR_USART6ENR)
-
-/* Disable Clock for USARTx */
-#define USART1_PCLK_DIS()			RCC_BASE->APB2ENR &= (uint32_t)~(1<< RCC_APB2ENR_USART1ENR)	
-#define USART2_PCLK_DIS()			RCC_BASE->APB1ENR &= (uint32_t)~(1<< RCC_APB1ENR_USART2ENR)
-#define USART3_PCLK_DIS()			RCC_BASE->APB1ENR &= (uint32_t)~(1<< RCC_APB1ENR_USART3ENR)
-#define UART4_PCLK_DIS()		  RCC_BASE->APB1ENR &= (uint32_t)~(1<< RCC_APB1ENR_UART4ENR)
-#define UART5_PCLK_DIS()			RCC_BASE->APB1ENR &= (uint32_t)~(1<< RCC_APB1ENR_UART5ENR)
-#define USART6_PCLK_DIS()			RCC_BASE->APB2ENR &= (uint32_t)~(1<< RCC_APB2ENR_USART6ENR)
-
-/* Reset Register for USART*/
 /*
  * Peripheral Clock setup
  */
@@ -200,25 +192,31 @@ void USART_DeInit(USART_RegDef_t *pUSARTx);
  */
 void USART_SendData(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len);
 void USART_ReceiveData(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len);
+
 uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle,uint8_t *pTxBuffer, uint32_t Len);
 uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint32_t Len);
 
 /*
  * IRQ Configuration and ISR handling
  */
-void USART_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
-void USART_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
+void USART_IRQInterruptConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
 void USART_IRQHandling(USART_Handle_t *pHandle);
 
 /*
  * Other Peripheral Control APIs
  */
 void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t EnOrDi);
+
+_weak void USART_PinConfig(USART_RegDef_t *pUSARTx);
+
 uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx , uint32_t FlagName);
 void USART_ClearFlag(USART_RegDef_t *pUSARTx, uint16_t StatusFlagName);
+void USART_SetBaudRate(USART_RegDef_t *pUSARTx, uint32_t BaudRate);
+
 
 /*
  * Application callback
  */
- void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv);
-#endif /* __STM32F407XX_SPI_DRIVER_H_ */
+void USART_ApplicationEventCallback(USART_Handle_t *pUSARTHandle,uint8_t AppEv);
+
+#endif /* __STM32F407XX_UART_DRIVER_H_ */
